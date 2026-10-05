@@ -178,10 +178,10 @@ def password_hash(password):
     return {"algorithm": "scrypt", "salt": salt.hex(), "digest": digest.hex()}
 
 
-def password_matches(password, stored):
-    with PASSWORD_WORK.slot():
-        digest = hashlib.scrypt(password.encode("utf-8"), salt=bytes.fromhex(stored["salt"]),
-                                n=16384, r=8, p=1, dklen=32)
+def password_matches_admitted(password, stored):
+    """Caller owns one PASSWORD_WORK slot; never admit a nested KDF here."""
+    digest = hashlib.scrypt(password.encode("utf-8"), salt=bytes.fromhex(stored["salt"]),
+                            n=16384, r=8, p=1, dklen=32)
     return hmac.compare_digest(digest.hex(), stored["digest"])
 
 
@@ -590,12 +590,17 @@ class Service:
             return {"password_hash": password_hash(password)}
         if path == "/auth/login":
             email, password = field(body, "email"), field(body, "password")
-            with self.lock:
-                user = self.by_email.get(email)
-                require(user is not None, 401, "unauthenticated", "Email or password not recognized")
-                prepared = {"generation": self.generation, "email": email,
-                            "user_id": user["id"], "password_hash": dict(user["password_hash"])}
-            prepared["matched"] = password_matches(password, prepared["password_hash"])
+            # Admit first so a snapshot cannot become obsolete in the FIFO queue.
+            # The gate's condition mutex is already released before this body;
+            # the live lock only covers capture, never admission or KDF work.
+            with PASSWORD_WORK.slot():
+                with self.lock:
+                    user = self.by_email.get(email)
+                    require(user is not None, 401, "unauthenticated", "Email or password not recognized")
+                    prepared = {"generation": self.generation, "email": email,
+                                "user_id": user["id"], "password_hash": dict(user["password_hash"])}
+                prepared["matched"] = password_matches_admitted(password, prepared["password_hash"])
+            # Release the hash slot before the final locked publication/fence.
             return prepared
         return None
 

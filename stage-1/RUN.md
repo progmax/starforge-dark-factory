@@ -93,8 +93,11 @@ the Verifier must measure arrival-to-response deadlines including all queue wait
 
 A process-local replacement generation increments under the live lock on every
 reset/import publication. It never rolls back, is never imported/exported and never
-participates in bearer-token validity. Login captures generation/email/user ID/hash,
-verifies outside the lock, then checks current generation and credential facts under
+participates in bearer-token validity. Login first obtains one FIFO hash slot, then
+captures current generation/email/user ID/hash briefly under the live lock immediately
+before verification. Its comparison helper uses that already-owned slot without nested
+admission. It verifies outside the live lock, releases the hash slot, then checks current
+generation and credential facts under
 the lock before success **or** wrong-password failure. Any replacement, including reused
 IDs with the same hash, triggers internal fresh lookup and verification after releasing
 the lock. There is no retry cap, stale fallback or new HTTP error. Removed email gives
@@ -210,6 +213,33 @@ and source-removal/all-five-retry portability. Ordinary<=5s and controls<=10s mu
 measured end to end, including hashing admission and generation retries. Static FIFO
 and two slots alone do not prove these budgets. No old test counts or verdicts apply to
 the new repair commit.
+
+### Admitted login snapshot repair after bounded replacement churn
+
+The Verifier reproduced a further end-to-end deadline failure in
+`4edb95b405225ab9f76b945ae06b1a341dd50b0f` on two independent origins:25 valid
+logins with25 staggered unchanged imports (50 total, maximum26 in flight) produced23
+login timeouts each. Original safe reports and exit1 evidence remain in
+`checks/verify-20261005T214606Z/`. Capturing generation/credentials before FIFO
+admission let queued snapshots become obsolete before their KDF began, causing
+repeated obsolete verification waves even though imported credentials were unchanged.
+
+The independently accepted scoped correction obtains one FIFO slot **before** reading
+current credential/generation facts. The brief capture uses the live lock, hashing
+releases it, and the comparison helper never takes a nested slot. The existing gate's
+finally releases the slot for lookup errors or KDF exceptions as well as success.
+Slot release precedes final locked publication. Replacement during KDF/publication
+still forces fresh admitted capture and verification through the existing uncapped
+generation loop. The final current generation/email/ID/hash fence, including checks
+before wrong-password failure, is unchanged. No KDF, token/import, signup, scheduler,
+monetary, error, Docker or resource-contract change was made. Coordinator released the
+narrow design on2026-10-05 22:06 UTC; Builder performed only static author checks.
+
+Fresh complete Verifier acceptance must rerun both-origin original staggered probes,
+changed-password/reused-ID/ABA/reset/import churn and every earlier published/frozen,
+ledger/inspection/resource/control/auth/mixed-load/cleanup/portability regression.
+No static end-to-end deadline PASS is claimed; all queue wait/KDF/retry/publication
+time belongs to actual arrival-to-response timing on the new exact revision.
 
 Verifier must fresh-clone the exact full product and audit revisions and execute all
 published applicable harness tests, frozen HTTP tests and audit inspectionsI-01..I-12,
