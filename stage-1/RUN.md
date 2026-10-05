@@ -130,6 +130,29 @@ clean-tree and author/committer checks are reported in the room after the actual
 One native patch attempt failed its RUN text-context match and applied no edits; the
 corrected patch was applied normally. No failed product runtime result exists yet.
 
+### Reset type repair after independent verification
+
+The Verifier subsequently found six genuine §5 reset defects in initial product
+`28b55ab6b17fb94a7d02f36b66e4d81b80339cc0`. Empty objects in `payments`/`requests`
+were accepted as empty iterations, replacing the destination. Boolean/string
+`minor_units` and wallet `balance` were rejected with422 instead of required400.
+Original safe evidence remains in the approved workspace at
+`checks/verify-20261005T210331Z/residual-summary.json`; no independent evidence,
+assertion, organizer source or failed commit was edited.
+
+The scoped repair type-checks optional fixture arrays, record objects and operator IDs,
+and uses a fixture-specific numeric guard for `minor_units` and wallet `balance`.
+Request status also uses the shared string-type validator. Wrong types return400
+`malformed_request`; missing fields and correct-type format/range failures remain422.
+Negative seeded balances still return422. API amount/note/visibility exceptions,
+settlement malformed batch handling and invalid imported state retain their specified
+422 behavior. Fixture validation still constructs detached state before replacement.
+
+Builder recompiled both modules and reviewed the diff statically only. Fresh complete
+Verifier acceptance of the new full commit is required; earlier runtime counts cannot
+be attributed to the repaired revision. Repair began2026-10-05 21:11 UTC, after the
+reported finding; mutation followed explicit Coordinator repair routing.
+
 Verifier must fresh-clone the exact full product and audit revisions and execute all
 published applicable harness tests, frozen HTTP tests and audit inspectionsI-01..I-12,
 including50-in-flight races, resource/offline/default+alternatePORT checks, invalid state

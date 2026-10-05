@@ -44,6 +44,18 @@ def integer(value, low, high):
     return int(value)
 
 
+def fixture_number(body, name, low, high):
+    """Fixture scalars follow §5 generic types, unlike API amount exceptions."""
+    require(name in body, message="Missing " + name)
+    value = body[name]
+    require(type(value) in (int, Decimal), 400, "malformed_request", "Wrong type for " + name)
+    return integer(value, low, high)
+
+
+def optional_list(body, name):
+    return field(body, name, list) if name in body else []
+
+
 def amount(body):
     require("amount" in body, message="Missing amount")
     return integer(body["amount"], 1, MAX_AMOUNT)
@@ -156,27 +168,31 @@ def build_fixture(body):
     state = empty_state()
     currency = field(body, "currency")
     require(currency in CURRENCIES)
-    units = integer(body.get("minor_units"), 0, 3)
+    units = fixture_number(body, "minor_units", 0, 3)
     require(CURRENCIES[currency] == units)
     state.update(currency=currency, minor_units=units)
+    users = field(body, "users", list)
+    payments = optional_list(body, "payments")
+    requests = optional_list(body, "requests")
+    operators = optional_list(body, "settlement_operator_ids")
     emails, handles = set(), set()
-    for source in field(body, "users", list):
-        require(type(source) is dict)
+    for source in users:
+        require(type(source) is dict, 400, "malformed_request", "User must be an object")
         uid = identifier(field(source, "id"))
         email, handle = field(source, "email"), field(source, "handle")
         require(HANDLE.fullmatch(handle) and email not in emails and handle not in handles)
         require(uid not in state["users"])
         user = {"id": uid, "email": email, "handle": handle,
                 "display_name": field(source, "display_name"),
-                "balance": integer(source.get("balance"), 0, MAX_BALANCE),
+                "balance": fixture_number(source, "balance", 0, MAX_BALANCE),
                 "password_hash": password_hash(field(source, "password"))}
         state["users"][uid] = user
         emails.add(email)
         handles.add(handle)
     state["seed_total"] = sum(u["balance"] for u in state["users"].values())
     state["opening_balances"] = {uid: u["balance"] for uid, u in state["users"].items()}
-    for source in body.get("payments", []):
-        require(type(source) is dict)
+    for source in payments:
+        require(type(source) is dict, 400, "malformed_request", "Payment must be an object")
         pid = identifier(field(source, "id"))
         sender = state["users"].get(field(source, "from_user_id"))
         receiver = state["users"].get(field(source, "to_user_id"))
@@ -185,19 +201,19 @@ def build_fixture(body):
         state["payments"][pid] = payment_record(
             state, sender, receiver, integer(source.get("amount"), 0, MAX_AMOUNT),
             note(source), visibility(source), now(), pid)
-    for source in body.get("requests", []):
-        require(type(source) is dict)
+    for source in requests:
+        require(type(source) is dict, 400, "malformed_request", "Request must be an object")
         rid = identifier(field(source, "id"))
         requester = state["users"].get(field(source, "requester_id"))
         payer = state["users"].get(field(source, "payer_id"))
         require(requester is not None and payer is not None and requester != payer)
-        status = source.get("status", "pending")
-        require(type(status) is str and status in STATUSES and rid not in state["requests"])
+        status = field(source, "status") if "status" in source else "pending"
+        require(status in STATUSES and rid not in state["requests"])
         state["requests"][rid] = request_record(
             state, requester, payer, integer(source.get("amount"), 0, MAX_AMOUNT), note(source),
             now(), rid, status)
-    operators = body.get("settlement_operator_ids", [])
-    require(type(operators) is list and all(type(v) is str and v in state["users"] for v in operators))
+    require(all(type(v) is str for v in operators), 400, "malformed_request", "Operator IDs must be strings")
+    require(all(v in state["users"] for v in operators))
     state["operators"] = list(dict.fromkeys(operators))
     # A fixture may contain historical terminal requests without a payment link;
     # the fixture contract does not require a link field. Import validates this
