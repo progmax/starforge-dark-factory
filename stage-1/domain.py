@@ -1,4 +1,6 @@
-"""Pocketful Stage1 domain and portable state. Call Service only under its lock."""
+"""Pocketful Stage1. Detached preparation, then live work under Service.lock."""
+from contextlib import contextmanager
+from collections import deque
 import copy
 import datetime as dt
 from decimal import Decimal
@@ -24,6 +26,10 @@ class APIError(Exception):
 
     def body(self):
         return {"error": {"code": self.code, "message": self.message}}
+
+
+class CredentialChanged(Exception):
+    """Internal recapture signal, never an HTTP error or state mutation."""
 
 
 def require(condition, status=422, code="validation_failed", message="Invalid request"):
@@ -127,15 +133,55 @@ def body_identity(body):
     return json.dumps(json_identity(body), ensure_ascii=True, separators=(",", ":"))
 
 
+class PasswordWork:
+    """FIFO admission for individual KDF calls, with at most two active.
+
+    This gate is independent of the live-state lock. Callers never hold the
+    state lock while waiting here or hashing. Password material is request-local;
+    there is no password/result cache and no change to scrypt strength.
+    """
+    def __init__(self):
+        self.condition = threading.Condition()
+        self.active = 0
+        self.waiters = deque()
+
+    @contextmanager
+    def slot(self):
+        ticket = object()
+        with self.condition:
+            self.waiters.append(ticket)
+            try:
+                while self.active >= 2 or self.waiters[0] is not ticket:
+                    self.condition.wait()
+            except BaseException:
+                self.waiters.remove(ticket)
+                self.condition.notify_all()
+                raise
+            self.waiters.popleft()
+            self.active += 1
+            self.condition.notify_all()  # Allow the next ticket into a second free slot.
+        try:
+            yield
+        finally:
+            with self.condition:
+                self.active -= 1
+                self.condition.notify_all()
+
+
+PASSWORD_WORK = PasswordWork()
+
+
 def password_hash(password):
     salt = secrets.token_bytes(16)
-    digest = hashlib.scrypt(password.encode("utf-8"), salt=salt, n=16384, r=8, p=1, dklen=32)
+    with PASSWORD_WORK.slot():
+        digest = hashlib.scrypt(password.encode("utf-8"), salt=salt, n=16384, r=8, p=1, dklen=32)
     return {"algorithm": "scrypt", "salt": salt.hex(), "digest": digest.hex()}
 
 
 def password_matches(password, stored):
-    digest = hashlib.scrypt(password.encode("utf-8"), salt=bytes.fromhex(stored["salt"]),
-                            n=16384, r=8, p=1, dklen=32)
+    with PASSWORD_WORK.slot():
+        digest = hashlib.scrypt(password.encode("utf-8"), salt=bytes.fromhex(stored["salt"]),
+                                n=16384, r=8, p=1, dklen=32)
     return hmac.compare_digest(digest.hex(), stored["digest"])
 
 
@@ -483,6 +529,7 @@ def validate_import(source):
 class Service:
     def __init__(self):
         self.lock = threading.RLock()
+        self.generation = 0  # Local monotonic fence, never exported/imported or reset.
         self.state = empty_state()
         self.reindex()
 
@@ -495,6 +542,7 @@ class Service:
     def replace(self, state):
         self.state = state
         self.reindex()
+        self.generation += 1
 
     def authenticate(self, header):
         require(type(header) is str, 401, "unauthenticated", "Bearer token required")
@@ -508,20 +556,69 @@ class Service:
         self.state["tokens"][token] = user["id"]
         return {"user_id": user["id"], "display_name": user["display_name"], "token": token}
 
-    def auth(self, path, body):
+    def signup_fields(self, body):
+        email, password = field(body, "email"), field(body, "password")
+        name = field(body, "display_name")
+        require(email.count("@") == 1 and all(email.split("@")) and len(password) >= 8)
+        handle = re.sub(r"[^a-z0-9_]", "_", email.split("@", 1)[0].lower())[:20]
+        return email, password, name, handle
+
+    def signup_available(self, email, handle):
+        require(email not in self.by_email, 409, "email_taken", "Email already registered")
+        require(handle not in self.by_handle, 409, "handle_taken", "Derived handle already registered")
+
+    def prepare(self, method, path, body):
+        """No live mutations, no KDF while holding the live-state lock.
+
+        Controls are validated against their detached inputs. Auth briefly reads
+        live indexes, releases the lock for hashing, then revalidates in auth().
+        All other routes defer processing to the locked route, preserving retry
+        conflict/replay precedence over business validation/current resources.
+        """
+        if method != "POST":
+            return None
+        if path == "/_test/reset":
+            return build_fixture(body)
+        if path == "/_test/import":
+            require(body.get("track") == "pocketful" and type(body.get("format_version")) in (int, Decimal)
+                    and body.get("format_version") == 1 and type(body.get("state")) is dict)
+            return validate_import(body["state"])
+        if path == "/auth/signup":
+            email, password, _, handle = self.signup_fields(body)
+            with self.lock:
+                self.signup_available(email, handle)
+            return {"password_hash": password_hash(password)}
+        if path == "/auth/login":
+            email, password = field(body, "email"), field(body, "password")
+            with self.lock:
+                user = self.by_email.get(email)
+                require(user is not None, 401, "unauthenticated", "Email or password not recognized")
+                prepared = {"generation": self.generation, "email": email,
+                            "user_id": user["id"], "password_hash": dict(user["password_hash"])}
+            prepared["matched"] = password_matches(password, prepared["password_hash"])
+            return prepared
+        return None
+
+    def auth(self, path, body, prepared):
         email, password = field(body, "email"), field(body, "password")
         user = self.by_email.get(email)
         if path == "/auth/login":
-            require(user is not None and password_matches(password, user["password_hash"]),
-                    401, "unauthenticated", "Email or password not recognized")
+            # Check the fence even for a wrong-password result. Reused IDs/hashes
+            # cannot disguise any intervening replacement (ABA). Recapture and
+            # reverify current credentials outside this lock, without a retry cap.
+            if (self.generation != prepared["generation"] or prepared["email"] != email
+                    or user is None or user["id"] != prepared["user_id"]
+                    or user["password_hash"] != prepared["password_hash"]):
+                raise CredentialChanged()
+            require(prepared["matched"], 401, "unauthenticated", "Email or password not recognized")
             return 200, self.session(user)
-        name = field(body, "display_name")
-        require(email.count("@") == 1 and all(email.split("@")) and len(password) >= 8)
-        require(user is None, 409, "email_taken", "Email already registered")
-        handle = re.sub(r"[^a-z0-9_]", "_", email.split("@", 1)[0].lower())[:20]
-        require(handle not in self.by_handle, 409, "handle_taken", "Derived handle already registered")
-        user = {"id": new_id(), "email": email, "handle": handle, "display_name": name,
-                "balance": 0, "password_hash": password_hash(password)}
+        email, _, name, handle = self.signup_fields(body)
+        self.signup_available(email, handle)
+        uid = new_id()
+        while uid in self.state["users"]:
+            uid = new_id()
+        user = {"id": uid, "email": email, "handle": handle, "display_name": name,
+                "balance": 0, "password_hash": prepared["password_hash"]}
         self.state["users"][user["id"]] = user
         self.state["opening_balances"][user["id"]] = 0
         self.by_handle[handle] = self.by_email[email] = user
@@ -683,22 +780,20 @@ class Service:
         page = values[offset:offset + limit]
         return {name: page, "has_more": offset + len(page) < len(values)}
 
-    def route(self, method, path, query, body, authorization, key):
+    def route(self, method, path, query, body, authorization, key, prepared=None):
         """Called with lock held through response encoding by the HTTP boundary."""
         if method == "GET" and path == "/health":
             return 200, {"status": "ok"}
         if method == "GET" and path == "/_test/export":
             return 200, {"track": "pocketful", "format_version": 1, "state": self.state}
         if method == "POST" and path == "/_test/reset":
-            self.replace(build_fixture(body))
+            self.replace(prepared)
             return 204, None
         if method == "POST" and path == "/_test/import":
-            require(body.get("track") == "pocketful" and type(body.get("format_version")) in (int, Decimal)
-                    and body.get("format_version") == 1 and type(body.get("state")) is dict)
-            self.replace(validate_import(body["state"]))
+            self.replace(prepared)
             return 204, None
         if method == "POST" and path in ("/auth/signup", "/auth/login"):
-            return self.auth(path, body)
+            return self.auth(path, body, prepared)
         caller = self.authenticate(authorization)
         if method == "GET" and path == "/me":
             return 200, {"user_id": caller["id"], "display_name": caller["display_name"],

@@ -53,13 +53,15 @@ audit `52b50da43a750452ed44fb9ab118c9576428a475`. `server.py` handles HTTP parsi
 routing and response encoding. No organizer example tests, earlier-run artifacts,
 existing domain product source, API documentation or schemas were consulted.
 
-One process-wide reentrant lock covers every route, including login/signup, readers,
-mutations, export, reset/import and retry resolution. Request bytes are parsed before
-the lock; authentication and all live-state work occur inside it. Responses are encoded
-under that same lock before sending bytes, so concurrent changes cannot mutate a
-receipt or snapshot being returned. A disconnected client retains its committed result
-and can retry normally. Request transitions and receipt/idempotency storage share the
-same critical section. Failed domain validation precedes mutations and key claims.
+One process-wide reentrant lock covers all live-state readers and mutations, including
+auth publication, export, reset/import publication and retry resolution. Request bytes,
+detached control-state preparation and password hashing are processed outside that lock.
+Login snapshots credential facts briefly under the same lock and revalidates them at
+publication. Responses are encoded under that lock before sending bytes, so concurrent
+changes cannot mutate a receipt or snapshot being returned. A disconnected client
+retains its committed result and can retry normally. Request transitions and
+receipt/idempotency storage share the same critical section. Failed domain validation
+precedes mutations and key claims.
 
 Python integers preserve exact wallet arithmetic. JSON numbers are parsed as Decimal,
 validated for integral value and converted to integers only after range checks. Split
@@ -79,6 +81,26 @@ Passwords use scrypt (`N=16384, r=8, p=1`, random16-byte salt,32-byte digest).
 Only hash records enter state; login compares derived digests in constant time. Random
 opaque bearer tokens never expire and are independently stored for concurrent sessions.
 Replacement controls clear all destination credentials and token records.
+
+Every individual KDF call obtains a FIFO ticket from a separate condition-based gate.
+At most two hashes run concurrently; a reset releases its slot between users and
+rejoins the queue for each next hash. New auth or seed work cannot overtake an existing
+ticket. Waiting-ticket interruption removes its ticket and notifies successors; active
+slots release in `finally` on success or exception. No queue-full rejection, worker pool,
+password cache, hash weakening or test-specific fixture shortcut is used. No live-state
+lock is held during gate waits or hashing. These limits bound concurrent KDF resources;
+the Verifier must measure arrival-to-response deadlines including all queue waits.
+
+A process-local replacement generation increments under the live lock on every
+reset/import publication. It never rolls back, is never imported/exported and never
+participates in bearer-token validity. Login captures generation/email/user ID/hash,
+verifies outside the lock, then checks current generation and credential facts under
+the lock before success **or** wrong-password failure. Any replacement, including reused
+IDs with the same hash, triggers internal fresh lookup and verification after releasing
+the lock. There is no retry cap, stale fallback or new HTTP error. Removed email gives
+the specified401; existing changed credentials receive a fresh verification. Signup
+checks email/derived handle again and allocates a collision-free current user ID at
+commit. Imported tokens continue to work by their preserved membership in imported state.
 
 ## Portable snapshot format
 
@@ -125,7 +147,7 @@ was executed by Builder. Compilation is a syntax check, not runtime acceptance.
 Author checks before handoff: both Python modules compiled with exit0; AST inspection
 found only standard-library dependencies and the local domain module. The complete
 RUN shell block passed `sh -n` with exit0. Source review traced all live-state mutation
-and reader paths through the shared HTTP lock. Staged whitespace, scope, full revision,
+and reader paths through the shared live-state lock. Staged whitespace, scope, full revision,
 clean-tree and author/committer checks are reported in the room after the actual commit.
 One native patch attempt failed its RUN text-context match and applied no edits; the
 corrected patch was applied normally. No failed product runtime result exists yet.
@@ -152,6 +174,42 @@ Builder recompiled both modules and reviewed the diff statically only. Fresh com
 Verifier acceptance of the new full commit is required; earlier runtime counts cannot
 be attributed to the repaired revision. Repair began2026-10-05 21:11 UTC, after the
 reported finding; mutation followed explicit Coordinator repair routing.
+
+### Control/auth contention repair after independent reproduction
+
+The Verifier rejected product `0655f50e9d66b5a5679ec98e6ef3b3977ed5220a` on two
+independent2CPU/2GiB offline origins:50 simultaneous six-user resets produced12 and11
+control timeouts;45 resets plus5 health reads also produced health timeouts. Source
+review traced this to six scrypt calls per reset inside the live lock. Original exit1
+reports and exact failure evidence remain in
+`checks/verify-20261005T211747Z/`; no prior commit or independent evidence was edited.
+
+The final correction follows the independently accepted two-phase plan: reset/import
+preparation is detached and validated outside the live lock; whole state and derived
+indexes publish together under it. Login/signup hash work also runs outside the live
+lock, with the FIFO gate and current-credential publication fence described above.
+Invalid preparation has no live effect. Import preserves original hashes, records,
+timestamps, IDs, permissions and all five original retry responses without rehashing or
+replaying movements. Money/retries/request transitions/feed authorization and export
+remain within the common current-state boundary. Explicit JSON/error exceptions and
+the reset type repair remain in force. The Docker/RUN offline/resource command is unchanged.
+
+Provisional edits began only after Coordinator repair authorization, then stopped on
+the Auditor-review HOLD. Unlimited auth priority was rejected at design review and was
+replaced with per-KDF FIFO; the generation fence was added before finalization. No
+provisional commit or runtime result existed. Coordinator released the corrected plan
+after independent design acceptance on2026-10-05 21:40 UTC. This is design acceptance,
+not runtime acceptance. Builder's compilation, AST/source and shell syntax checks are
+static only.
+
+Fresh complete acceptance must include published/frozen suites andI-01..I-12, both
+origins'50 resets,50 imports,50 auth requests, mixed<=50 controls/auth/health/money,
+changed-password/reused-ID reset/import churn and login revalidation loops, FIFO slot
+failure/interruption recovery, noOOM/restarts/5xx/starvation, invalid preparation recovery
+and source-removal/all-five-retry portability. Ordinary<=5s and controls<=10s must be
+measured end to end, including hashing admission and generation retries. Static FIFO
+and two slots alone do not prove these budgets. No old test counts or verdicts apply to
+the new repair commit.
 
 Verifier must fresh-clone the exact full product and audit revisions and execute all
 published applicable harness tests, frozen HTTP tests and audit inspectionsI-01..I-12,

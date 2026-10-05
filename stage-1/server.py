@@ -5,7 +5,7 @@ import json
 import os
 from urllib.parse import parse_qs, urlsplit
 
-from domain import APIError, Service, require
+from domain import APIError, CredentialChanged, Service, require
 
 
 SERVICE = Service()
@@ -65,12 +65,20 @@ class Handler(BaseHTTPRequestHandler):
             query = parse_qs(parsed.query, keep_blank_values=True)
             # Serialize the response inside the same boundary as domain work. It
             # cannot reference records mutated after the lock has been released.
-            with SERVICE.lock:
-                status, result = SERVICE.route(self.command, parsed.path, query, body,
-                                               self.headers.get("Authorization"),
-                                               self.headers.get("Idempotency-Key"))
-                payload = b"" if status == 204 else json.dumps(
-                    result, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+            while True:
+                prepared = SERVICE.prepare(self.command, parsed.path, body)
+                try:
+                    with SERVICE.lock:
+                        status, result = SERVICE.route(self.command, parsed.path, query, body,
+                                                       self.headers.get("Authorization"),
+                                                       self.headers.get("Idempotency-Key"), prepared)
+                        payload = b"" if status == 204 else json.dumps(
+                            result, ensure_ascii=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+                    break
+                except CredentialChanged:
+                    # No state change on this branch. Hash-gate admission/current
+                    # credential verification happen after the live lock releases.
+                    continue
         except APIError as exc:
             status, payload = exc.status, json.dumps(exc.body()).encode("utf-8")
         except (ValueError, UnicodeError, TypeError, OverflowError, RecursionError):
