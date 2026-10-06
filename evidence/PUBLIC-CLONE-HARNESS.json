@@ -1,0 +1,59 @@
+{
+  "revision": "6366de2e7b6145f5ff2913376c449fc64bebdc55",
+  "track": "pocketful",
+  "stages": {
+    "1": "pass"
+  },
+  "highest_contiguous": 1,
+  "started_at": "2026-10-06T04:37:46.093694+00:00",
+  "finished_at": "2026-10-06T04:38:47.113011+00:00",
+  "schema_version": 2,
+  "run_id": "153d472109104e6e92fdb4b853682177",
+  "mode": "isolated",
+  "provenance": "working-tree",
+  "state": "completed",
+  "pytest_args": [],
+  "suite_digest": "5015f93902dde016a626b879f1687f95c9371d5a15ce2ef1b1aa09304e8bec26",
+  "checks": {
+    "1": {
+      "collected": 147,
+      "passed": 147,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "deselected": 0,
+      "xfailed": 0,
+      "files": {
+        "stage_1/test_me_payments.py": {
+          "passed": 24,
+          "total": 24
+        },
+        "stage_1/test_requests_splits_feed.py": {
+          "passed": 39,
+          "total": 39
+        },
+        "stage_1/test_retries_splits_input.py": {
+          "passed": 51,
+          "total": 51
+        },
+        "stage_1/test_sample.py": {
+          "passed": 19,
+          "total": 19
+        },
+        "stage_1/test_seeded_state.py": {
+          "passed": 14,
+          "total": 14
+        }
+      }
+    }
+  },
+  "overshoot": null,
+  "claimed_stage": "1",
+  "share": 1.0,
+  "upgrade_sources": {
+    "2": {
+      "folder": "/Users/max/work/ai/hackops/participation/dark-factory/work/checks/public-stage1-clone-20261006T0440/stage-1",
+      "revision": "6366de2e7b6145f5ff2913376c449fc64bebdc55"
+    }
+  }
+}
