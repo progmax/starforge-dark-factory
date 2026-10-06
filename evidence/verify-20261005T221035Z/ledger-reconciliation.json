@@ -1,0 +1,1372 @@
+[
+  {
+    "id": "S1-01",
+    "source": "\u00a71 scope; opening instruction",
+    "obligation": "Only own synthetic Stage1 HTTP service; no domain product source/API/schema reuse, no later-stage work required.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-01"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S1-02",
+    "source": "\u00a71 invariant 1",
+    "obligation": "Sum of balances equals seed total after all writes, failures, retries and concurrent operations; import restores exported total.",
+    "frozen_test_methods": [
+      "test_concurrent_spending_and_reads",
+      "test_request_terminal_races",
+      "test_settlement_concurrency",
+      "test_export_import_portability"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S1-03",
+    "source": "\u00a71 invariant 2",
+    "obligation": "Nonnegative balances including transiently, never partial debit/credit.",
+    "frozen_test_methods": [
+      "test_concurrent_spending_and_reads",
+      "test_control_atomic_races"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S1-04",
+    "source": "\u00a71 invariant 3",
+    "obligation": "A request moves money at most once under same or different retry keys and terminal races.",
+    "frozen_test_methods": [
+      "test_request_terminal_races",
+      "test_cross_path_money_races",
+      "test_idempotency_after_state_change"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S1-05",
+    "source": "\u00a71 amounts/scope",
+    "obligation": "Exact integer minor units; transfers only among existing wallets; no external deposits or integrations required.",
+    "frozen_test_methods": [
+      "test_exact_high_balance",
+      "test_payment_errors_atomic"
+    ],
+    "inspections": [
+      "I-01"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S2-01",
+    "source": "\u00a72 deliverables",
+    "obligation": "HTTP service, Dockerfile and build/start RUN command without manual setup; Compose optional.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-03"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S2-02",
+    "source": "\u00a72 harness contract",
+    "obligation": "Container runs independently; acceptance accesses HTTP, never imports product code on judge host.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-03"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S2-03",
+    "source": "\u00a72 image/runtime",
+    "obligation": "Single container with PORT and mapping, all runtime dependencies/assets/init/seed included; no runtime outbound dependency, Compose unused.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-04"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S2-04",
+    "source": "\u00a72 resource table",
+    "obligation": "Operates at 2 vCPU / 2 GiB, ready within 60 seconds, up to 50 in flight; request <=5 s and controls <=10 s.",
+    "frozen_test_methods": [
+      "test_concurrent_identical_all_paths",
+      "test_concurrent_spending_and_reads"
+    ],
+    "inspections": [
+      "I-05"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S2-05",
+    "source": "\u00a72 disk",
+    "obligation": "Ephemeral state allowed; abrupt restart durability not required.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-06"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-01",
+    "source": "\u00a73.1",
+    "obligation": "Listen 0.0.0.0, PORT environment and default 8080.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-03"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-02",
+    "source": "\u00a73.2",
+    "obligation": "Ready GET /health is 200 JSON {status:ok}; healthy only after store can serve; startup <=60 s.",
+    "frozen_test_methods": [
+      "test_health"
+    ],
+    "inspections": [
+      "I-05"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-03",
+    "source": "\u00a73.3",
+    "obligation": "Unauthenticated enabled reset 204 empty; repeated replacement becomes visible when response completes.",
+    "frozen_test_methods": [
+      "test_reset_replacement_and_failure",
+      "test_control_atomic_races"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-04",
+    "source": "\u00a73.4",
+    "obligation": "JSON with UTF-8 charset on JSON responses; requests sent as specified.",
+    "frozen_test_methods": [
+      "test_health",
+      "test_common_validation"
+    ],
+    "inspections": [
+      "I-07"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-05",
+    "source": "\u00a73.4",
+    "obligation": "Response timestamps RFC3339 explicit offset.",
+    "frozen_test_methods": [
+      "test_payment_values_and_receipts",
+      "test_splits_rounding",
+      "test_settlement_net_and_receipts",
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-06",
+    "source": "\u00a73.4",
+    "obligation": "Ignore unknown body fields and query parameters; never reject them.",
+    "frozen_test_methods": [
+      "test_common_validation",
+      "test_idempotency_scope_and_json",
+      "test_feed_and_pagination"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S3-07",
+    "source": "\u00a73.4",
+    "obligation": "IDs opaque strings <=64 chars; tests do not impose prefixes/encoding.",
+    "frozen_test_methods": [
+      "test_authentication",
+      "test_payment_values_and_receipts",
+      "test_splits_rounding",
+      "test_settlement_net_and_receipts"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-01",
+    "source": "\u00a74 currency/model",
+    "obligation": "One fixture currency; minor units 0/2/3 for JPY/EUR/BHD; no rescaling API amounts.",
+    "frozen_test_methods": [
+      "test_reset_seed_and_currency"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-02",
+    "source": "\u00a74 numeric",
+    "obligation": "Integral numeric values 1000,1000.0,1e3 accepted equivalently; strings/booleans invalid amounts.",
+    "frozen_test_methods": [
+      "test_payment_values_and_receipts",
+      "test_common_validation"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-03",
+    "source": "\u00a74 users",
+    "obligation": "Handles unique, immutable, pattern a-z0-9_ length1..20; seeded handles retained.",
+    "frozen_test_methods": [
+      "test_authentication",
+      "test_concurrent_signup",
+      "test_reset_seed_and_currency"
+    ],
+    "inspections": [
+      "I-08"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-04",
+    "source": "\u00a74 derived handle",
+    "obligation": "Signup local part lowercase, replace each disallowed char with _, truncate20; collision fails atomically.",
+    "frozen_test_methods": [
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-05",
+    "source": "\u00a74 new users",
+    "obligation": "Signup balance0 and immediately receive payments and requests.",
+    "frozen_test_methods": [
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-06",
+    "source": "\u00a74 payment/request",
+    "obligation": "Direct/request payment immediate atomic; request pending -> one terminal state; correct requester/payer roles.",
+    "frozen_test_methods": [
+      "test_requests_and_insufficient_recovery",
+      "test_request_permissions_and_terminal_states"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-07",
+    "source": "\u00a74 overbalance requests",
+    "obligation": "Request may exceed payer balance; pay fails409 unchanged; later incoming funds allow same request.",
+    "frozen_test_methods": [
+      "test_requests_and_insufficient_recovery"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-08",
+    "source": "\u00a74 visibility/feed",
+    "obligation": "Payment visible iff public or caller party; private receiver sees same visibility, no operator exception.",
+    "frozen_test_methods": [
+      "test_feed_and_pagination",
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-09",
+    "source": "\u00a74 requests/splits",
+    "obligation": "Requests only in parties' request lists, never feed; split itself never feed item.",
+    "frozen_test_methods": [
+      "test_feed_and_pagination",
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-10",
+    "source": "\u00a74 arithmetic range",
+    "obligation": "Per amount <=1e9; balances within \u00b12^53; exact arithmetic at high values. Overflow rejection code unspecified.",
+    "frozen_test_methods": [
+      "test_exact_high_balance",
+      "test_common_validation"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-11",
+    "source": "\u00a74 fixture",
+    "obligation": "Seed password usable immediately; balances already net, seeded payments not replayed.",
+    "frozen_test_methods": [
+      "test_reset_seed_and_currency"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S4-12",
+    "source": "\u00a74 negative fixture",
+    "obligation": "Negative seeded balance422 validation_failed; prior state unchanged.",
+    "frozen_test_methods": [
+      "test_reset_replacement_and_failure"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-01",
+    "source": "\u00a75 errors",
+    "obligation": "Every error has error.code and human-readable string message; no5xx even under load.",
+    "frozen_test_methods": [
+      "test_common_validation",
+      "test_concurrent_spending_and_reads"
+    ],
+    "inspections": [
+      "I-07"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-02",
+    "source": "\u00a75 table",
+    "obligation": "Unparseable JSON/wrong JSON field type400 malformed_request unless explicit exception.",
+    "frozen_test_methods": [
+      "test_common_validation",
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-03",
+    "source": "\u00a75 table",
+    "obligation": "Missing required fields422 validation_failed; correct-type invalid format/range422 unless endpoint-specific code.",
+    "frozen_test_methods": [
+      "test_common_validation",
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-04",
+    "source": "\u00a75 exceptions",
+    "obligation": "Invalid amount including strings/bools, note nonstring/null, visibility any non-public/private422. Only omission selects defaults.",
+    "frozen_test_methods": [
+      "test_common_validation"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-05",
+    "source": "\u00a75 query syntax/ranges",
+    "obligation": "Decimal digits only; limit1..200 default50, offset>=0 default0; invalid numeric forms422.",
+    "frozen_test_methods": [
+      "test_feed_and_pagination",
+      "test_request_lists",
+      "test_sorting_and_default_pagination"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-06",
+    "source": "\u00a75 key range",
+    "obligation": "Absent/empty key400 missing_idempotency_key; length1..255; over255422 validation_failed.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S5-07",
+    "source": "\u00a75 permission/errors",
+    "obligation": "Missing/malformed/unknown bearer401; forbidden403; unknown resource404; required status/code exact.",
+    "frozen_test_methods": [
+      "test_authenticated_routes",
+      "test_request_permissions_and_terminal_states",
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S6-01",
+    "source": "\u00a76 signup/login",
+    "obligation": "Correct201 signup and200 login shapes with user_id, display_name, token.",
+    "frozen_test_methods": [
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S6-02",
+    "source": "\u00a76 signup table",
+    "obligation": "Duplicate email409 email_taken; password<8/email invalid422; bad login401; derived collision409 handle_taken creates no account.",
+    "frozen_test_methods": [
+      "test_authentication",
+      "test_concurrent_signup"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S6-03",
+    "source": "\u00a76 bearer",
+    "obligation": "All business endpoints authenticated; health/reset/auth/export/import exempt by \u00a710.",
+    "frozen_test_methods": [
+      "test_authenticated_routes",
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S6-04",
+    "source": "\u00a76 sessions",
+    "obligation": "Multiple tokens remain valid concurrently, no expiry; tokens preserved after import.",
+    "frozen_test_methods": [
+      "test_authentication",
+      "test_export_import_portability"
+    ],
+    "inspections": [
+      "I-09"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S6-05",
+    "source": "\u00a76 passwords",
+    "obligation": "Password hashing function, no plaintext storage, including seeded/signup/export/import state. Encoding unspecified.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-09"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-01",
+    "source": "\u00a77 five paths",
+    "obligation": "payments, requests, request-pay, splits, settlements each require key; first success201.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-02",
+    "source": "\u00a77 replay",
+    "obligation": "Same user/method/path/key/body replay200, identical original JSON response, no additional effect.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths",
+      "test_idempotency_after_state_change"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-03",
+    "source": "\u00a77 scope",
+    "obligation": "Distinct users and paths independent for identical key; distinct request-pay IDs independent.",
+    "frozen_test_methods": [
+      "test_idempotency_scope_and_json"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-04",
+    "source": "\u00a77 equality",
+    "obligation": "Same parsed JSON regardless object key order/whitespace/numeric representation; array order and absent-vs-explicit defaults differ.",
+    "frozen_test_methods": [
+      "test_idempotency_scope_and_json"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-05",
+    "source": "\u00a77 conflict",
+    "obligation": "Different parsed body same claimed key409 idempotency_key_reuse, including otherwise invalid changed field body.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths",
+      "test_idempotency_scope_and_json",
+      "test_concurrent_conflicting_keys"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-06",
+    "source": "\u00a77 failed use",
+    "obligation": "Every failed4xx leaves key reusable; corrected request is first use201.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths",
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-07",
+    "source": "\u00a77 concurrent",
+    "obligation": "50 simultaneous identical unused-key calls: exactly one201, all others200 same body; one effect.",
+    "frozen_test_methods": [
+      "test_concurrent_identical_all_paths"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-08",
+    "source": "\u00a77 changed resource",
+    "obligation": "Original successful replay survives paid/declined/cancelled state; original body and no writes.",
+    "frozen_test_methods": [
+      "test_idempotency_after_state_change",
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S7-09",
+    "source": "\u00a77 precedence",
+    "obligation": "Once object parsed and caller authenticated, claimed key resolved before field validation/current-resource checks.",
+    "frozen_test_methods": [
+      "test_idempotency_all_paths",
+      "test_idempotency_after_state_change"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-01",
+    "source": "\u00a78 /me",
+    "obligation": "Caller user_id/display_name/handle/balance/currency/minor_units exact.",
+    "frozen_test_methods": [
+      "test_reset_seed_and_currency",
+      "test_authentication"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-02",
+    "source": "\u00a78 payments success",
+    "obligation": "Receipt fields sender/recipient IDs/handles/amount/currency/note/visibility/request_id/created_at; defaults note empty/public; settlement_id null per \u00a711.",
+    "frozen_test_methods": [
+      "test_payment_values_and_receipts"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-03",
+    "source": "\u00a78 payments errors",
+    "obligation": "Short funds409; amount range/noninteger422; own handle422 self_payment; note>200/invalid visibility422; unknown handle404.",
+    "frozen_test_methods": [
+      "test_payment_errors_atomic",
+      "test_common_validation"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-04",
+    "source": "\u00a78 payment atomicity",
+    "obligation": "Debit/credit single atomic step; failed payment no trace; verbatim note Unicode/emoji no normalization/trimming.",
+    "frozen_test_methods": [
+      "test_payment_values_and_receipts",
+      "test_payment_errors_atomic",
+      "test_concurrent_spending_and_reads"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-05",
+    "source": "\u00a78 requests success",
+    "obligation": "Caller requester; receipt party IDs/handles/amount/currency/note/pending/null payment/timestamp; optional note empty.",
+    "frozen_test_methods": [
+      "test_requests_and_insufficient_recovery"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-06",
+    "source": "\u00a78 requests errors",
+    "obligation": "Invalid amount/note422; own payer422 self_request; unknown payer404; never funds check.",
+    "frozen_test_methods": [
+      "test_requests_and_insufficient_recovery",
+      "test_common_validation"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-07",
+    "source": "\u00a78 request-pay",
+    "obligation": "Only payer; body optional visibility defaultpublic; returns payment201 linked request, sets paid/payment_id.",
+    "frozen_test_methods": [
+      "test_requests_and_insufficient_recovery"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-08",
+    "source": "\u00a78 request-pay errors",
+    "obligation": "Nonpending409 request_not_pending; short funds409; wrong payer403; unknown404.",
+    "frozen_test_methods": [
+      "test_request_permissions_and_terminal_states",
+      "test_requests_and_insufficient_recovery"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-09",
+    "source": "\u00a78 decline",
+    "obligation": "Only payer;200 declined; second decline200 current; paid/cancelled409; wrong party403; no key needed.",
+    "frozen_test_methods": [
+      "test_request_permissions_and_terminal_states"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-10",
+    "source": "\u00a78 cancel",
+    "obligation": "Only requester;200 cancelled; second cancel200; paid/declined409; wrong party403; no key needed.",
+    "frozen_test_methods": [
+      "test_request_permissions_and_terminal_states"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-11",
+    "source": "\u00a78 GET requests",
+    "obligation": "Only two parties; incoming/outgoing/both and four status filters; unknown filters422.",
+    "frozen_test_methods": [
+      "test_request_lists"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-12",
+    "source": "\u00a78 request pagination",
+    "obligation": "Newest-first timestamp, correct defaults/ranges/offset/has_more.",
+    "frozen_test_methods": [
+      "test_request_lists",
+      "test_sorting_and_default_pagination"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-13",
+    "source": "\u00a78 split success",
+    "obligation": "Listed order shares for all listed participants (caller optional), requests for every other listed party in order; caller requester; no funds checks.",
+    "frozen_test_methods": [
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-14",
+    "source": "\u00a78 split errors",
+    "obligation": "Empty/duplicate participants422; unknown404; amount/note422; no partial requests/claimed key on failure.",
+    "frozen_test_methods": [
+      "test_split_validation_atomic",
+      "test_common_validation"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-15",
+    "source": "\u00a78 split self-only",
+    "obligation": "Single caller valid one share zero requests.",
+    "frozen_test_methods": [
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S8-16",
+    "source": "\u00a78 activity",
+    "obligation": "Only visible payments, newest first, same pagination/ranges; same-second relative order unspecified.",
+    "frozen_test_methods": [
+      "test_feed_and_pagination",
+      "test_sorting_and_default_pagination"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S9-01",
+    "source": "\u00a79 shares",
+    "obligation": "Exact integer sum; max spread1; remainder given first listed, examples1000/3,1/3,10/3,999/3,5/5.",
+    "frozen_test_methods": [
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S9-02",
+    "source": "\u00a79 zero share",
+    "obligation": "Zero share legal, creates request and can be paid; must not impose ordinary amount minimum on derived share.",
+    "frozen_test_methods": [
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S9-03",
+    "source": "\u00a79 independence",
+    "obligation": "Different list order moves extra unit, independent previous splits; paying all retains seed total.",
+    "frozen_test_methods": [
+      "test_splits_rounding"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-01",
+    "source": "\u00a710 control endpoints",
+    "obligation": "Export/import unauthenticated; export200 object track pocketful/version1/state object, import204 empty.",
+    "frozen_test_methods": [
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-02",
+    "source": "\u00a710 opaque portability",
+    "obligation": "Unchanged export accepted in distinct process/port, no source files/volumes/network dependence; source removable.",
+    "frozen_test_methods": [
+      "test_export_import_portability"
+    ],
+    "inspections": [
+      "I-10"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-03",
+    "source": "\u00a710 replacement",
+    "obligation": "Import atomic replacement, not merge; repeat no duplication; removes destination accounts/credentials/tokens; reset clears imported state.",
+    "frozen_test_methods": [
+      "test_export_import_portability",
+      "test_control_atomic_races",
+      "test_reset_clears_all_idempotency_paths"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-04",
+    "source": "\u00a710 invalid imports",
+    "obligation": "Unparseable400; missing fields/wrong track/version/invalid state422; destination unchanged. Wrong outer types follow \u00a75; no invented state schema.",
+    "frozen_test_methods": [
+      "test_export_import_validation"
+    ],
+    "inspections": [
+      "I-11"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-05",
+    "source": "\u00a710 snapshot",
+    "obligation": "Atomic read-only export; subsequent source writes do not mutate prior snapshot.",
+    "frozen_test_methods": [
+      "test_export_import_portability",
+      "test_control_atomic_races"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-06",
+    "source": "\u00a710 preservation",
+    "obligation": "Accounts/hash login/tokens/currency/balances/payments/requests/permissions/IDs/timestamps retained, not reseeded/replayed.",
+    "frozen_test_methods": [
+      "test_export_import_portability"
+    ],
+    "inspections": [
+      "I-09"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-07",
+    "source": "\u00a710 idempotency",
+    "obligation": "All completed request bodies/original receipts including settlements preserved, failed keys reusable; preimport tokens and retries work.",
+    "frozen_test_methods": [
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S10-08",
+    "source": "\u00a710 timeout/privacy",
+    "obligation": "Controls <=10 s; credentials/tokens private artifacts, no room leaks.",
+    "frozen_test_methods": [],
+    "inspections": [
+      "I-05",
+      "I-12"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-01",
+    "source": "\u00a711 operators",
+    "obligation": "Optional fixture operator IDs defaultempty; operator any wallets; no token401/nonoperator403; no private-feed/request privilege.",
+    "frozen_test_methods": [
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-02",
+    "source": "\u00a711 batch shape",
+    "obligation": "transfers1..32 objects; malformed batch shape422; unknown fields ignored.",
+    "frozen_test_methods": [
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-03",
+    "source": "\u00a711 entry validation",
+    "obligation": "Ordinary amount/note/visibility/defaults; unknown404/self422 self_payment; entry errors input order before funds.",
+    "frozen_test_methods": [
+      "test_settlement_validation_and_permissions"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-04",
+    "source": "\u00a711 affordability",
+    "obligation": "Net all incoming/outgoing per wallet, nonnegative final; need not be sequentially affordable; short collective409.",
+    "frozen_test_methods": [
+      "test_settlement_net_and_receipts",
+      "test_settlement_concurrency"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-05",
+    "source": "\u00a711 atomicity",
+    "obligation": "Entire batch or nothing; failed validation no key/payment/revision; no transient negative balance. Revision is not a public field.",
+    "frozen_test_methods": [
+      "test_settlement_validation_and_permissions",
+      "test_settlement_concurrency"
+    ],
+    "inspections": [
+      "I-02"
+    ],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-06",
+    "source": "\u00a711 response",
+    "obligation": "settlement_id/committed_at/payments input order; each payment settlement_id batch/null request_id; equal created_at/committed_at. Nonmembers settlement_id null.",
+    "frozen_test_methods": [
+      "test_settlement_net_and_receipts",
+      "test_payment_values_and_receipts"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-07",
+    "source": "\u00a711 visibility/replay",
+    "obligation": "Each constituent ordinary visibility; operator receipt includes all; replay200 original full response.",
+    "frozen_test_methods": [
+      "test_settlement_net_and_receipts",
+      "test_idempotency_all_paths"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  },
+  {
+    "id": "S11-08",
+    "source": "\u00a711 state preservation",
+    "obligation": "Reset installs fixture operator permissions; import preserves operators/membership/receipts/retries.",
+    "frozen_test_methods": [
+      "test_settlement_validation_and_permissions",
+      "test_export_import_portability"
+    ],
+    "inspections": [],
+    "status": "PASS",
+    "evidence": [
+      "independent-summary.json",
+      "INSPECTION-RESULTS.md",
+      "SOURCE-INSPECTION.md"
+    ]
+  }
+]

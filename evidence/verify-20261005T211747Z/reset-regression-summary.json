@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "malformed_and_invalid_cases": 52,
+  "valid_numeric_representation_cases": 6,
+  "failures": [],
+  "http_calls": 288,
+  "max_request_seconds": 0.26132558297831565,
+  "elapsed_seconds": 4.7442725019936915
+}

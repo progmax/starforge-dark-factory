@@ -1,0 +1,13 @@
+{
+  "exported_at": "2026-10-05T23:05:36.286Z",
+  "room": {
+    "id": "615b6e94-4717-404e-ba86-05015a1a0092",
+    "title": "Starforge clean Stage 1"
+  },
+  "scope": "full",
+  "events": 457,
+  "owner_messages": 1,
+  "sha256": "14a8a68039fd8784b6c9bd7427bf91530a89082ec02a9b0582e4f33bbfb82ab7",
+  "redacted": false,
+  "final_coordinator_outcome_present": true
+}

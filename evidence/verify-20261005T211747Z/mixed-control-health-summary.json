@@ -1,0 +1,360 @@
+{
+  "passed": false,
+  "reset_calls": 45,
+  "health_calls": 5,
+  "worker_limit": 50,
+  "health_started_one_second_after_reset_release": true,
+  "results": [
+    {
+      "kind": "reset",
+      "index": 0,
+      "status": 204,
+      "passed": true,
+      "seconds": 3.951632127020275
+    },
+    {
+      "kind": "reset",
+      "index": 1,
+      "status": 204,
+      "passed": true,
+      "seconds": 9.374243961996399
+    },
+    {
+      "kind": "reset",
+      "index": 2,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.5401489580108318
+    },
+    {
+      "kind": "reset",
+      "index": 3,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.8047638749994803
+    },
+    {
+      "kind": "reset",
+      "index": 4,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.507865669991588
+    },
+    {
+      "kind": "reset",
+      "index": 5,
+      "status": 204,
+      "passed": true,
+      "seconds": 1.3386820839950815
+    },
+    {
+      "kind": "reset",
+      "index": 6,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.03100067100604
+    },
+    {
+      "kind": "reset",
+      "index": 7,
+      "status": 204,
+      "passed": true,
+      "seconds": 1.8605512509820983
+    },
+    {
+      "kind": "reset",
+      "index": 8,
+      "status": 204,
+      "passed": true,
+      "seconds": 2.120821625983808
+    },
+    {
+      "kind": "reset",
+      "index": 9,
+      "status": 204,
+      "passed": true,
+      "seconds": 3.688782042998355
+    },
+    {
+      "kind": "reset",
+      "index": 10,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.253946461016312
+    },
+    {
+      "kind": "reset",
+      "index": 11,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.74242829400464
+    },
+    {
+      "kind": "reset",
+      "index": 12,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.030576171004213
+    },
+    {
+      "kind": "reset",
+      "index": 13,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.03116654700716
+    },
+    {
+      "kind": "reset",
+      "index": 14,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.030700922012329
+    },
+    {
+      "kind": "reset",
+      "index": 15,
+      "status": 204,
+      "passed": true,
+      "seconds": 2.640418668015627
+    },
+    {
+      "kind": "reset",
+      "index": 16,
+      "status": 204,
+      "passed": true,
+      "seconds": 1.0697253330145031
+    },
+    {
+      "kind": "reset",
+      "index": 17,
+      "status": 204,
+      "passed": true,
+      "seconds": 1.5981069589906838
+    },
+    {
+      "kind": "reset",
+      "index": 18,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.4798841679876205
+    },
+    {
+      "kind": "reset",
+      "index": 19,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.219653042993741
+    },
+    {
+      "kind": "reset",
+      "index": 20,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.27793429198209196
+    },
+    {
+      "kind": "reset",
+      "index": 21,
+      "status": 204,
+      "passed": true,
+      "seconds": 2.379070000984939
+    },
+    {
+      "kind": "reset",
+      "index": 22,
+      "status": 204,
+      "passed": true,
+      "seconds": 2.90406987600727
+    },
+    {
+      "kind": "reset",
+      "index": 23,
+      "status": 204,
+      "passed": true,
+      "seconds": 3.1633769600011874
+    },
+    {
+      "kind": "reset",
+      "index": 24,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.030845421017148
+    },
+    {
+      "kind": "reset",
+      "index": 25,
+      "status": 204,
+      "passed": true,
+      "seconds": 6.798620919988025
+    },
+    {
+      "kind": "reset",
+      "index": 26,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.7657788780052215
+    },
+    {
+      "kind": "reset",
+      "index": 27,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.999638459994458
+    },
+    {
+      "kind": "reset",
+      "index": 28,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.030828503979137
+    },
+    {
+      "kind": "reset",
+      "index": 29,
+      "status": 204,
+      "passed": true,
+      "seconds": 7.570186544995522
+    },
+    {
+      "kind": "reset",
+      "index": 30,
+      "status": 204,
+      "passed": true,
+      "seconds": 8.10470204599551
+    },
+    {
+      "kind": "reset",
+      "index": 31,
+      "status": 204,
+      "passed": true,
+      "seconds": 6.021135127986781
+    },
+    {
+      "kind": "reset",
+      "index": 32,
+      "status": 204,
+      "passed": true,
+      "seconds": 9.62742250500014
+    },
+    {
+      "kind": "reset",
+      "index": 33,
+      "status": 204,
+      "passed": true,
+      "seconds": 7.055311670002993
+    },
+    {
+      "kind": "reset",
+      "index": 34,
+      "status": 204,
+      "passed": true,
+      "seconds": 6.539476627978729
+    },
+    {
+      "kind": "reset",
+      "index": 35,
+      "status": 204,
+      "passed": true,
+      "seconds": 6.27790671098046
+    },
+    {
+      "kind": "reset",
+      "index": 36,
+      "status": 204,
+      "passed": true,
+      "seconds": 8.35812279599486
+    },
+    {
+      "kind": "reset",
+      "index": 37,
+      "status": 204,
+      "passed": true,
+      "seconds": 7.831561419996433
+    },
+    {
+      "kind": "reset",
+      "index": 38,
+      "status": 204,
+      "passed": true,
+      "seconds": 8.613512420997722
+    },
+    {
+      "kind": "reset",
+      "index": 39,
+      "status": 204,
+      "passed": true,
+      "seconds": 7.313336961000459
+    },
+    {
+      "kind": "reset",
+      "index": 40,
+      "passed": false,
+      "error": "transport failure POST /_test/reset: TimeoutError",
+      "seconds": 10.029572296014521
+    },
+    {
+      "kind": "reset",
+      "index": 41,
+      "status": 204,
+      "passed": true,
+      "seconds": 9.88169517100323
+    },
+    {
+      "kind": "reset",
+      "index": 42,
+      "status": 204,
+      "passed": true,
+      "seconds": 9.120548254984897
+    },
+    {
+      "kind": "reset",
+      "index": 43,
+      "status": 204,
+      "passed": true,
+      "seconds": 8.866721338010393
+    },
+    {
+      "kind": "reset",
+      "index": 44,
+      "status": 204,
+      "passed": true,
+      "seconds": 3.425611585000297
+    },
+    {
+      "kind": "health",
+      "index": 0,
+      "passed": false,
+      "error": "transport failure GET /health: TimeoutError",
+      "seconds": 5.006422919977922
+    },
+    {
+      "kind": "health",
+      "index": 1,
+      "passed": false,
+      "error": "transport failure GET /health: TimeoutError",
+      "seconds": 5.005901960976189
+    },
+    {
+      "kind": "health",
+      "index": 2,
+      "passed": false,
+      "error": "transport failure GET /health: TimeoutError",
+      "seconds": 5.004954419011483
+    },
+    {
+      "kind": "health",
+      "index": 3,
+      "passed": false,
+      "error": "transport failure GET /health: TimeoutError",
+      "seconds": 5.006388835987309
+    },
+    {
+      "kind": "health",
+      "index": 4,
+      "passed": false,
+      "error": "transport failure GET /health: TimeoutError",
+      "seconds": 5.006159460986964
+    }
+  ],
+  "elapsed_seconds": 10.126412837998942
+}

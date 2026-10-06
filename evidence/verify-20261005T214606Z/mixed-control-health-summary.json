@@ -1,0 +1,360 @@
+{
+  "passed": true,
+  "reset_calls": 45,
+  "health_calls": 5,
+  "worker_limit": 50,
+  "health_started_one_second_after_reset_release": true,
+  "results": [
+    {
+      "kind": "reset",
+      "index": 0,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.403819918981753
+    },
+    {
+      "kind": "reset",
+      "index": 1,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.984234127012314
+    },
+    {
+      "kind": "reset",
+      "index": 2,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.014916626998456
+    },
+    {
+      "kind": "reset",
+      "index": 3,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.113579210999887
+    },
+    {
+      "kind": "reset",
+      "index": 4,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.943085418984992
+    },
+    {
+      "kind": "reset",
+      "index": 5,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.071201543993084
+    },
+    {
+      "kind": "reset",
+      "index": 6,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.186960418999661
+    },
+    {
+      "kind": "reset",
+      "index": 7,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.029156419011997
+    },
+    {
+      "kind": "reset",
+      "index": 8,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.057385752006667
+    },
+    {
+      "kind": "reset",
+      "index": 9,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.156855252018431
+    },
+    {
+      "kind": "reset",
+      "index": 10,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.143931461003376
+    },
+    {
+      "kind": "reset",
+      "index": 11,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.199541210982716
+    },
+    {
+      "kind": "reset",
+      "index": 12,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.416529544017976
+    },
+    {
+      "kind": "reset",
+      "index": 13,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.099000543996226
+    },
+    {
+      "kind": "reset",
+      "index": 14,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.361932501982665
+    },
+    {
+      "kind": "reset",
+      "index": 15,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.749447002017405
+    },
+    {
+      "kind": "reset",
+      "index": 16,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.230751461000182
+    },
+    {
+      "kind": "reset",
+      "index": 17,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.2725277110002935
+    },
+    {
+      "kind": "reset",
+      "index": 18,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.5803003780019935
+    },
+    {
+      "kind": "reset",
+      "index": 19,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.243821960000787
+    },
+    {
+      "kind": "reset",
+      "index": 20,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.71543637700961
+    },
+    {
+      "kind": "reset",
+      "index": 21,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.791122669004835
+    },
+    {
+      "kind": "reset",
+      "index": 22,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.287312919012038
+    },
+    {
+      "kind": "reset",
+      "index": 23,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.877651295013493
+    },
+    {
+      "kind": "reset",
+      "index": 24,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.83492071100045
+    },
+    {
+      "kind": "reset",
+      "index": 25,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.33191950301989
+    },
+    {
+      "kind": "reset",
+      "index": 26,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.757423253002344
+    },
+    {
+      "kind": "reset",
+      "index": 27,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.449438376992475
+    },
+    {
+      "kind": "reset",
+      "index": 28,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.316745418997016
+    },
+    {
+      "kind": "reset",
+      "index": 29,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.7057774610002525
+    },
+    {
+      "kind": "reset",
+      "index": 30,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.373919378005667
+    },
+    {
+      "kind": "reset",
+      "index": 31,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.633175335999113
+    },
+    {
+      "kind": "reset",
+      "index": 32,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.622372168989386
+    },
+    {
+      "kind": "reset",
+      "index": 33,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.4912119610235095
+    },
+    {
+      "kind": "reset",
+      "index": 34,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.88757133600302
+    },
+    {
+      "kind": "reset",
+      "index": 35,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.537252709997119
+    },
+    {
+      "kind": "reset",
+      "index": 36,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.459307293989696
+    },
+    {
+      "kind": "reset",
+      "index": 37,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.501562876976095
+    },
+    {
+      "kind": "reset",
+      "index": 38,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.588999419996981
+    },
+    {
+      "kind": "reset",
+      "index": 39,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.665147794003133
+    },
+    {
+      "kind": "reset",
+      "index": 40,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.674055503011914
+    },
+    {
+      "kind": "reset",
+      "index": 41,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.545964543998707
+    },
+    {
+      "kind": "reset",
+      "index": 42,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.800971877004486
+    },
+    {
+      "kind": "reset",
+      "index": 43,
+      "status": 204,
+      "passed": true,
+      "seconds": 4.972641169006238
+    },
+    {
+      "kind": "reset",
+      "index": 44,
+      "status": 204,
+      "passed": true,
+      "seconds": 5.8453397109988146
+    },
+    {
+      "kind": "health",
+      "index": 0,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.0024672089784871787
+    },
+    {
+      "kind": "health",
+      "index": 1,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.001811624999390915
+    },
+    {
+      "kind": "health",
+      "index": 2,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.002160041010938585
+    },
+    {
+      "kind": "health",
+      "index": 3,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.0037898329901508987
+    },
+    {
+      "kind": "health",
+      "index": 4,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.004560542001854628
+    }
+  ],
+  "elapsed_seconds": 5.978378920000978
+}

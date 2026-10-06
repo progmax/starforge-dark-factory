@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "source_removed_before_import": true,
+  "third_independent_process": true,
+  "preserved_original_write_paths": 5,
+  "preserved_accounts": 7,
+  "failed_key_reusable": true,
+  "operator_rights_preserved": true,
+  "destination_credentials_removed": true,
+  "repeated_import_restored_unchanged_snapshot": true,
+  "http_calls": 45,
+  "max_request_seconds": 0.2542266669915989,
+  "elapsed_seconds": 0.6201744579884689
+}

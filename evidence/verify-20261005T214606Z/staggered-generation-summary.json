@@ -1,0 +1,363 @@
+{
+  "passed": false,
+  "total_http_calls": 50,
+  "max_inflight": 26,
+  "replacements": 25,
+  "logins": 25,
+  "import_spacing_seconds": 0.19,
+  "first_import_delay_seconds": 0.06,
+  "unchanged_export_imported": true,
+  "results": [
+    {
+      "kind": "login",
+      "index": 0,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.014894252002705
+    },
+    {
+      "kind": "login",
+      "index": 1,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.012076461018296
+    },
+    {
+      "kind": "login",
+      "index": 2,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.010726334992796
+    },
+    {
+      "kind": "login",
+      "index": 3,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.009843043982983
+    },
+    {
+      "kind": "login",
+      "index": 4,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.0098081690084655
+    },
+    {
+      "kind": "login",
+      "index": 5,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.051695625006686896
+    },
+    {
+      "kind": "login",
+      "index": 6,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.010834127024282
+    },
+    {
+      "kind": "login",
+      "index": 7,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.0087871690047905
+    },
+    {
+      "kind": "login",
+      "index": 8,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.012517586001195
+    },
+    {
+      "kind": "login",
+      "index": 9,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.009813126991503
+    },
+    {
+      "kind": "login",
+      "index": 10,
+      "status": 200,
+      "passed": true,
+      "seconds": 0.04896016701241024
+    },
+    {
+      "kind": "login",
+      "index": 11,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.0131524189782795
+    },
+    {
+      "kind": "login",
+      "index": 12,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.013967751991004
+    },
+    {
+      "kind": "login",
+      "index": 13,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.010359168983996
+    },
+    {
+      "kind": "login",
+      "index": 14,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.011310169007629
+    },
+    {
+      "kind": "login",
+      "index": 15,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.006467459985288
+    },
+    {
+      "kind": "login",
+      "index": 16,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.010291210986907
+    },
+    {
+      "kind": "login",
+      "index": 17,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.007839961006539
+    },
+    {
+      "kind": "login",
+      "index": 18,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.0089441270101815
+    },
+    {
+      "kind": "login",
+      "index": 19,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.009410544007551
+    },
+    {
+      "kind": "login",
+      "index": 20,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.011024251987692
+    },
+    {
+      "kind": "login",
+      "index": 21,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.008943961001933
+    },
+    {
+      "kind": "login",
+      "index": 22,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.012798252981156
+    },
+    {
+      "kind": "login",
+      "index": 23,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.009973586013075
+    },
+    {
+      "kind": "login",
+      "index": 24,
+      "passed": false,
+      "error": "transport failure POST /auth/login: TimeoutError",
+      "seconds": 5.01196000300115
+    },
+    {
+      "kind": "import",
+      "index": 0,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.001290707994485274
+    },
+    {
+      "kind": "import",
+      "index": 1,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011660000018309802
+    },
+    {
+      "kind": "import",
+      "index": 2,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0010791250097099692
+    },
+    {
+      "kind": "import",
+      "index": 3,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.001293959008762613
+    },
+    {
+      "kind": "import",
+      "index": 4,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.001141584012657404
+    },
+    {
+      "kind": "import",
+      "index": 5,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0013456669985316694
+    },
+    {
+      "kind": "import",
+      "index": 6,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.00121070901514031
+    },
+    {
+      "kind": "import",
+      "index": 7,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.00141125000664033
+    },
+    {
+      "kind": "import",
+      "index": 8,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011779160122387111
+    },
+    {
+      "kind": "import",
+      "index": 9,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011374579917173833
+    },
+    {
+      "kind": "import",
+      "index": 10,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0016816249990370125
+    },
+    {
+      "kind": "import",
+      "index": 11,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0013855830184184015
+    },
+    {
+      "kind": "import",
+      "index": 12,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0012825829908251762
+    },
+    {
+      "kind": "import",
+      "index": 13,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011693749984260648
+    },
+    {
+      "kind": "import",
+      "index": 14,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011031670146621764
+    },
+    {
+      "kind": "import",
+      "index": 15,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011159999994561076
+    },
+    {
+      "kind": "import",
+      "index": 16,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0012307919969316572
+    },
+    {
+      "kind": "import",
+      "index": 17,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011651669919956475
+    },
+    {
+      "kind": "import",
+      "index": 18,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.001292250002734363
+    },
+    {
+      "kind": "import",
+      "index": 19,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0012227910046931356
+    },
+    {
+      "kind": "import",
+      "index": 20,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0011400000075809658
+    },
+    {
+      "kind": "import",
+      "index": 21,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0015111250104382634
+    },
+    {
+      "kind": "import",
+      "index": 22,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0017097500094678253
+    },
+    {
+      "kind": "import",
+      "index": 23,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0012134169810451567
+    },
+    {
+      "kind": "import",
+      "index": 24,
+      "status": 204,
+      "passed": true,
+      "seconds": 0.0026457089988980442
+    }
+  ],
+  "elapsed_seconds": 5.022672502993373
+}

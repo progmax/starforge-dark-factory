@@ -1,0 +1,204 @@
+{
+  "verdict": "REJECT",
+  "product_commit": "28b55ab6b17fb94a7d02f36b66e4d81b80339cc0",
+  "audit_commit": "52b50da43a750452ed44fb9ab118c9576428a475",
+  "organizer_commit": "803560d2a678ace1414465c098eb0ab5380ffade",
+  "started_at": "2026-10-05T21:03:31+00:00",
+  "finished_at": "2026-10-05T21:15:27.096514+00:00",
+  "official_stage1": {
+    "collected": 147,
+    "passed": 147,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "xfailed": 0,
+    "files": {
+      "stage_1/test_me_payments.py": {
+        "passed": 24,
+        "total": 24
+      },
+      "stage_1/test_requests_splits_feed.py": {
+        "passed": 39,
+        "total": 39
+      },
+      "stage_1/test_retries_splits_input.py": {
+        "passed": 51,
+        "total": 51
+      },
+      "stage_1/test_sample.py": {
+        "passed": 19,
+        "total": 19
+      },
+      "stage_1/test_seeded_state.py": {
+        "passed": 14,
+        "total": 14
+      }
+    }
+  },
+  "independent": {
+    "started_at": "2026-10-05T21:08:36.993051+00:00",
+    "elapsed_seconds": 57.96659,
+    "tests_run": 32,
+    "subtests_run": 198,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "http_calls": 6051,
+    "max_request_seconds": 2.571205,
+    "passed": true
+  },
+  "overshoot": {
+    "collected": 35,
+    "passed": 0,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "xfailed": 0,
+    "files": {
+      "stage_2/test_sample.py": {
+        "passed": 0,
+        "total": 10
+      },
+      "stage_2/test_ui.py": {
+        "passed": 0,
+        "total": 25
+      }
+    }
+  },
+  "supplemental": {
+    "results": [
+      {
+        "name": "I-02 combined replacements and money writes",
+        "passed": true,
+        "detail": {
+          "simultaneous_calls": 50,
+          "restored_atomic_snapshots": 11,
+          "statuses": {
+            "200": 10,
+            "201": 15,
+            "204": 10,
+            "401": 12,
+            "409": 3
+          }
+        },
+        "seconds": 4.832835711014923
+      },
+      {
+        "name": "I-11 source-justified invalid-state recovery",
+        "passed": true,
+        "detail": {
+          "invalid_state_cases": [
+            "missing_required_seed_total",
+            "negative_wallet",
+            "overflow_wallet",
+            "inconsistent_seed_total",
+            "invalid_password_hash",
+            "dangling_token_user",
+            "unknown_operator",
+            "missing_retry_response",
+            "invalid_retry_body_identity",
+            "out_of_range_payment",
+            "dangling_payment_party",
+            "invalid_request_status"
+          ],
+          "all_five_original_replays_preserved": true,
+          "valid_import_recovery_each": true
+        },
+        "seconds": 1.4325492510106415
+      },
+      {
+        "name": "I-07 reset wrong JSON field types",
+        "passed": true,
+        "detail": {
+          "observed_defects": [
+            {
+              "case": "payments_dict",
+              "expected_status": 400,
+              "actual_status": 204,
+              "actual_code": null,
+              "unchanged": false
+            },
+            {
+              "case": "requests_dict",
+              "expected_status": 400,
+              "actual_status": 204,
+              "actual_code": null,
+              "unchanged": false
+            },
+            {
+              "case": "minor_units_bool",
+              "expected_status": 400,
+              "actual_status": 422,
+              "actual_code": "validation_failed",
+              "unchanged": true
+            },
+            {
+              "case": "minor_units_str",
+              "expected_status": 400,
+              "actual_status": 422,
+              "actual_code": "validation_failed",
+              "unchanged": true
+            },
+            {
+              "case": "balance_bool",
+              "expected_status": 400,
+              "actual_status": 422,
+              "actual_code": "validation_failed",
+              "unchanged": true
+            },
+            {
+              "case": "balance_string",
+              "expected_status": 400,
+              "actual_status": 422,
+              "actual_code": "validation_failed",
+              "unchanged": true
+            }
+          ],
+          "case_count": 6
+        },
+        "seconds": 1.022469375981018
+      }
+    ],
+    "http_calls": 1049,
+    "max_request_seconds": 1.308393958985107
+  },
+  "source_removed_portability": {
+    "passed": true,
+    "source_removed_before_import": true,
+    "third_independent_process": true,
+    "preserved_original_write_paths": 5,
+    "preserved_accounts": 7,
+    "failed_key_reusable": true,
+    "operator_rights_preserved": true,
+    "destination_credentials_removed": true,
+    "repeated_import_restored_unchanged_snapshot": true,
+    "http_calls": 45,
+    "max_request_seconds": 0.2542266669915989,
+    "elapsed_seconds": 0.6201744579884689
+  },
+  "defect_requirement": "Stage1 \u00a75 wrong JSON field types / I-07",
+  "defect_cases": 6,
+  "evidence": [
+    "DEFECTS.md",
+    "INSPECTION-RESULTS.md",
+    "ledger-reconciliation.json",
+    "identity.json",
+    "services.json",
+    "third-service.json"
+  ],
+  "model": "Codex/gpt-6.1-sol",
+  "effort": "high per owner briefing",
+  "token_usage": null,
+  "billing": null,
+  "limitations": [
+    "Published tests are participant package subset; all applicable published Stage1 cases were executed.",
+    "Opaque state invalidity probes derive from exact source; no frozen assertion changed.",
+    "Supplemental fixture-type probe records discrepancies and exited0; observation completion is not conformance.",
+    "Docker internal networks do not expose host mappings; all service requests used isolated origins.",
+    "No broad throughput/peak-memory claim beyond required bounded50-in-flight tests and enforced limits.",
+    "No indefinite wall-clock token aging or abrupt-restart persistence requirement."
+  ]
+}

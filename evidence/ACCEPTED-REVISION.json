@@ -1,0 +1,16 @@
+{
+  "product_commit": "a8805bf4dc2297e0953ea4a5979fcd85c98b95b4",
+  "audit_commit": "52b50da43a750452ed44fb9ab118c9576428a475",
+  "organizer_commit": "803560d2a678ace1414465c098eb0ab5380ffade",
+  "stage1_tree": "8589e056f9cd3004fdb09ed61084d3d11f5d4fb1",
+  "room_id": "615b6e94-4717-404e-ba86-05015a1a0092",
+  "packaging": "operator documentation/evidence only",
+  "source_files": {
+    "stage-1/.dockerignore": "7e71f8bae4ad1d8939bf32c98d9de4f0eeb56651f00ab8429b72a8128799c871",
+    "stage-1/.gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+    "stage-1/Dockerfile": "8b1f2393b90a472db9fbb0802a8223dc3e00d4d806c10bf289c4890c8c0faa5c",
+    "stage-1/RUN.md": "88c194d7803d9665a942467a04d70940f5d2c616b876d360aa48372e593b97b7",
+    "stage-1/domain.py": "f3b8d621a940481e6ce7f6bfbb040fb6765e372adef5801c9edfbb963d163e41",
+    "stage-1/server.py": "25e711a05ef8fd7529321c80e6a235417d2426e41d6418e1d30625350ff2d190"
+  }
+}

@@ -1,0 +1,11 @@
+This is Starforge, our solo Pocketful entry for Dark Factory. This recording shows the actual BAND room that produced the submitted Stage One service.
+
+Our four seats use Codex and the same model, with different responsibilities. The Coordinator plans and routes complete handoffs. The Auditor designs independent tests from the specification and freezes them before implementation. The Builder alone writes product code. The Verifier checks fresh exact clones and containers.
+
+The room received one human task. The agents handled three genuine rejections without human debugging hints. They corrected malformed reset behavior, concurrent reset deadlines, and login delays during state replacement.
+
+Here is a complete handoff, the exact Builder revision, and the independent final acceptance. The submitted service is an HTTP API for synthetic wallet balances, payments, requests, splits and atomic settlements. Stage One has no browser application.
+
+The accepted revision passed all one hundred and forty seven published tests, plus one hundred and ninety eight independent subtests. The factory checked every requirement in its eighty five row ledger, including concurrent retries and recovery after removing the source process.
+
+The repository preserves the agent history, generic mandates, independent audit, rejected results and the genuine full room export. Measured Stage One work took about two hours and thirteen minutes. Model billing is unknown. Our evidence covers Stage One only; private judging tests are unavailable.

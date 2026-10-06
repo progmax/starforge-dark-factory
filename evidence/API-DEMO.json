@@ -1,0 +1,48 @@
+{
+  "provenance": "Actual HTTP responses from the submitted Stage1 container. Demo output, not a browser application.",
+  "product_revision": "a8805bf4dc2297e0953ea4a5979fcd85c98b95b4",
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "ok"
+    }
+  },
+  "balance_before": {
+    "user_id": "demo_ada",
+    "display_name": "Ada",
+    "handle": "ada",
+    "balance": 10000,
+    "currency": "EUR",
+    "minor_units": 2
+  },
+  "first_payment": {
+    "status": 201,
+    "body": {
+      "payment_id": "d4bf5d3ee77b43c68181939002fff26f",
+      "from_user_id": "demo_ada",
+      "from_handle": "ada",
+      "to_user_id": "demo_bob",
+      "to_handle": "bob",
+      "amount": 1500,
+      "currency": "EUR",
+      "note": "Demo dinner",
+      "visibility": "public",
+      "request_id": null,
+      "settlement_id": null,
+      "created_at": "2026-10-05T23:19:01.878388+00:00"
+    }
+  },
+  "same_request_retry": {
+    "status": 200,
+    "identical_receipt": true
+  },
+  "balance_after": {
+    "user_id": "demo_ada",
+    "display_name": "Ada",
+    "handle": "ada",
+    "balance": 8500,
+    "currency": "EUR",
+    "minor_units": 2
+  },
+  "demonstrated": "The retry returns the original receipt and debits no additional money."
+}

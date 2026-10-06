@@ -1,0 +1,7 @@
+# Stage1 video provenance
+
+The footage is an actual sampled screen recording of the completed clean BAND room, captured through the authorized browser interface. It shows the real roster, complete handoff, genuine REJECT, Verifier ACCEPT and Coordinator final outcome. It is a recorded walkthrough of the completed event log, not a claim of live implementation or recreated agent activity. The scene cuts reorder the walkthrough for narration; no message content is edited. Original captured frames and millisecond capture log remain in recording-frames/.
+
+Captures are composed at approximately their recording cadence (low-cadence scenes0.8s/frame; final scene0.2s/frame), with gaps between recording clips removed. The cover and final result/limits cards are presentation slides. The API result card summarizes real HTTP responses collected in a separate container built from unchanged accepted code; API-DEMO.json is its source. No token or password appears in the shared output. The localhost browser could not reach Docker's internal network mapping, so there is no invented browser UI or browser API screenshot.
+
+English narration uses macOS Samantha text-to-speech. VIDEO-NARRATION.txt is the exact script. Media claims only Stage1. Source/history/full room and verifier reports remain authoritative. All demo-owned container/network resources were cleaned; active agent-run resources were untouched.

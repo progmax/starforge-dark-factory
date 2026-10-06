@@ -1,0 +1,4804 @@
+{
+  "verdict": "REJECT",
+  "product_commit": "4edb95b405225ab9f76b945ae06b1a341dd50b0f",
+  "audit_commit": "52b50da43a750452ed44fb9ab118c9576428a475",
+  "organizer_commit": "803560d2a678ace1414465c098eb0ab5380ffade",
+  "started_at": "2026-10-05T21:46:06+00:00",
+  "finished_at": "2026-10-05T22:05:16.372498+00:00",
+  "official": {
+    "collected": 147,
+    "passed": 147,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "xfailed": 0,
+    "files": {
+      "stage_1/test_me_payments.py": {
+        "passed": 24,
+        "total": 24
+      },
+      "stage_1/test_requests_splits_feed.py": {
+        "passed": 39,
+        "total": 39
+      },
+      "stage_1/test_retries_splits_input.py": {
+        "passed": 51,
+        "total": 51
+      },
+      "stage_1/test_sample.py": {
+        "passed": 19,
+        "total": 19
+      },
+      "stage_1/test_seeded_state.py": {
+        "passed": 14,
+        "total": 14
+      }
+    }
+  },
+  "independent": {
+    "started_at": "2026-10-05T21:52:25.645132+00:00",
+    "elapsed_seconds": 58.91881,
+    "tests_run": 32,
+    "subtests_run": 198,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_test_names": [],
+    "http_calls": 6051,
+    "max_request_seconds": 1.250428,
+    "passed": true
+  },
+  "additional_passes": {
+    "reset-regression-summary.json": {
+      "passed": true,
+      "malformed_and_invalid_cases": 52,
+      "valid_numeric_representation_cases": 6,
+      "failures": [],
+      "http_calls": 288,
+      "max_request_seconds": 0.2568253340141382,
+      "elapsed_seconds": 4.70361525300541
+    },
+    "control-load-summary.json": {
+      "passed": true,
+      "concurrent_requests": 50,
+      "fixture_users": 6,
+      "results": [
+        {
+          "index": 0,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.539847587002441
+        },
+        {
+          "index": 1,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.624702127999626
+        },
+        {
+          "index": 2,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.665133461996447
+        },
+        {
+          "index": 3,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.5535101699933875
+        },
+        {
+          "index": 4,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.856094420014415
+        },
+        {
+          "index": 5,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.688647253002273
+        },
+        {
+          "index": 6,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.883817919995636
+        },
+        {
+          "index": 7,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.773177836992545
+        },
+        {
+          "index": 8,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.755777127982583
+        },
+        {
+          "index": 9,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.730767795001157
+        },
+        {
+          "index": 10,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.965975628001615
+        },
+        {
+          "index": 11,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.670001502992818
+        },
+        {
+          "index": 12,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.688428877998376
+        },
+        {
+          "index": 13,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.923964837013045
+        },
+        {
+          "index": 14,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.048257502989145
+        },
+        {
+          "index": 15,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.00680266902782
+        },
+        {
+          "index": 16,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.026295585994376
+        },
+        {
+          "index": 17,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.941245836002054
+        },
+        {
+          "index": 18,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.896899127983488
+        },
+        {
+          "index": 19,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.814393878012197
+        },
+        {
+          "index": 20,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.712933461996727
+        },
+        {
+          "index": 21,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.153446085983887
+        },
+        {
+          "index": 22,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.983003711007768
+        },
+        {
+          "index": 23,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.79671662801411
+        },
+        {
+          "index": 24,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.068250669981353
+        },
+        {
+          "index": 25,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.089623045001645
+        },
+        {
+          "index": 26,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.19506341998931
+        },
+        {
+          "index": 27,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.172723044001032
+        },
+        {
+          "index": 28,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.215523544989992
+        },
+        {
+          "index": 29,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.131384336011251
+        },
+        {
+          "index": 30,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.256465086014941
+        },
+        {
+          "index": 31,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.111483503016643
+        },
+        {
+          "index": 32,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.240661710995482
+        },
+        {
+          "index": 33,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.344089627993526
+        },
+        {
+          "index": 34,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.429021002986701
+        },
+        {
+          "index": 35,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.282806836999953
+        },
+        {
+          "index": 36,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.6416550029825885
+        },
+        {
+          "index": 37,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.366945379006211
+        },
+        {
+          "index": 38,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.326104378997115
+        },
+        {
+          "index": 39,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.582304003997706
+        },
+        {
+          "index": 40,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.470271252997918
+        },
+        {
+          "index": 41,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.594807712011971
+        },
+        {
+          "index": 42,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.299906086991541
+        },
+        {
+          "index": 43,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.410982044995762
+        },
+        {
+          "index": 44,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.3859040870156605
+        },
+        {
+          "index": 45,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.707892504025949
+        },
+        {
+          "index": 46,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.842785418994026
+        },
+        {
+          "index": 47,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.512028919998556
+        },
+        {
+          "index": 48,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.4950455040088855
+        },
+        {
+          "index": 49,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.4525147110107355
+        }
+      ],
+      "elapsed_seconds": 6.803895877994364,
+      "max_request_seconds": 6.707892504025949
+    },
+    "control-load-repeat-summary.json": {
+      "passed": true,
+      "concurrent_requests": 50,
+      "fixture_users": 6,
+      "results": [
+        {
+          "index": 0,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.568318836012622
+        },
+        {
+          "index": 1,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.505669753008988
+        },
+        {
+          "index": 2,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.547177669999655
+        },
+        {
+          "index": 3,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.591761252988363
+        },
+        {
+          "index": 4,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.561103878018912
+        },
+        {
+          "index": 5,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.610693836002611
+        },
+        {
+          "index": 6,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.5896016280166805
+        },
+        {
+          "index": 7,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.653294670017203
+        },
+        {
+          "index": 8,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.682177878014045
+        },
+        {
+          "index": 9,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.742053795023821
+        },
+        {
+          "index": 10,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.831371877982747
+        },
+        {
+          "index": 11,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.872320252994541
+        },
+        {
+          "index": 12,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.72304237697972
+        },
+        {
+          "index": 13,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.63401829401846
+        },
+        {
+          "index": 14,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.699147793988232
+        },
+        {
+          "index": 15,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.91439800299122
+        },
+        {
+          "index": 16,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.766258543997537
+        },
+        {
+          "index": 17,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.897535627998877
+        },
+        {
+          "index": 18,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.851775169983739
+        },
+        {
+          "index": 19,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.809067627997138
+        },
+        {
+          "index": 20,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.787177211983362
+        },
+        {
+          "index": 21,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.07118104500114
+        },
+        {
+          "index": 22,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.939957669994328
+        },
+        {
+          "index": 23,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.956863544997759
+        },
+        {
+          "index": 24,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.98308366999845
+        },
+        {
+          "index": 25,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.001196586003061
+        },
+        {
+          "index": 26,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.024998545006383
+        },
+        {
+          "index": 27,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.198951628000941
+        },
+        {
+          "index": 28,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.041647003003163
+        },
+        {
+          "index": 29,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.213904543983517
+        },
+        {
+          "index": 30,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.083863168983953
+        },
+        {
+          "index": 31,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.113344795012381
+        },
+        {
+          "index": 32,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.242998670000816
+        },
+        {
+          "index": 33,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.125236670020968
+        },
+        {
+          "index": 34,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.3036795030056965
+        },
+        {
+          "index": 35,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.156055169994943
+        },
+        {
+          "index": 36,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.420309878012631
+        },
+        {
+          "index": 37,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.28705271097715
+        },
+        {
+          "index": 38,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.259141502989223
+        },
+        {
+          "index": 39,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.171067420014879
+        },
+        {
+          "index": 40,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.346777711005416
+        },
+        {
+          "index": 41,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.43251683600829
+        },
+        {
+          "index": 42,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.6025368370173965
+        },
+        {
+          "index": 43,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.475402627984295
+        },
+        {
+          "index": 44,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.517060379002942
+        },
+        {
+          "index": 45,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.331001710990677
+        },
+        {
+          "index": 46,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.389992877986515
+        },
+        {
+          "index": 47,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.548959211009787
+        },
+        {
+          "index": 48,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.46388937800657
+        },
+        {
+          "index": 49,
+          "status": 204,
+          "passed": true,
+          "seconds": 6.376872544002254
+        }
+      ],
+      "elapsed_seconds": 6.694060253998032,
+      "max_request_seconds": 6.6025368370173965
+    },
+    "mixed-control-health-summary.json": {
+      "passed": true,
+      "reset_calls": 45,
+      "health_calls": 5,
+      "worker_limit": 50,
+      "health_started_one_second_after_reset_release": true,
+      "results": [
+        {
+          "kind": "reset",
+          "index": 0,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.403819918981753
+        },
+        {
+          "kind": "reset",
+          "index": 1,
+          "status": 204,
+          "passed": true,
+          "seconds": 4.984234127012314
+        },
+        {
+          "kind": "reset",
+          "index": 2,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.014916626998456
+        },
+        {
+          "kind": "reset",
+          "index": 3,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.113579210999887
+        },
+        {
+          "kind": "reset",
+          "index": 4,
+          "status": 204,
+          "passed": true,
+          "seconds": 4.943085418984992
+        },
+        {
+          "kind": "reset",
+          "index": 5,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.071201543993084
+        },
+        {
+          "kind": "reset",
+          "index": 6,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.186960418999661
+        },
+        {
+          "kind": "reset",
+          "index": 7,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.029156419011997
+        },
+        {
+          "kind": "reset",
+          "index": 8,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.057385752006667
+        },
+        {
+          "kind": "reset",
+          "index": 9,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.156855252018431
+        },
+        {
+          "kind": "reset",
+          "index": 10,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.143931461003376
+        },
+        {
+          "kind": "reset",
+          "index": 11,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.199541210982716
+        },
+        {
+          "kind": "reset",
+          "index": 12,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.416529544017976
+        },
+        {
+          "kind": "reset",
+          "index": 13,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.099000543996226
+        },
+        {
+          "kind": "reset",
+          "index": 14,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.361932501982665
+        },
+        {
+          "kind": "reset",
+          "index": 15,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.749447002017405
+        },
+        {
+          "kind": "reset",
+          "index": 16,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.230751461000182
+        },
+        {
+          "kind": "reset",
+          "index": 17,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.2725277110002935
+        },
+        {
+          "kind": "reset",
+          "index": 18,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.5803003780019935
+        },
+        {
+          "kind": "reset",
+          "index": 19,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.243821960000787
+        },
+        {
+          "kind": "reset",
+          "index": 20,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.71543637700961
+        },
+        {
+          "kind": "reset",
+          "index": 21,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.791122669004835
+        },
+        {
+          "kind": "reset",
+          "index": 22,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.287312919012038
+        },
+        {
+          "kind": "reset",
+          "index": 23,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.877651295013493
+        },
+        {
+          "kind": "reset",
+          "index": 24,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.83492071100045
+        },
+        {
+          "kind": "reset",
+          "index": 25,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.33191950301989
+        },
+        {
+          "kind": "reset",
+          "index": 26,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.757423253002344
+        },
+        {
+          "kind": "reset",
+          "index": 27,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.449438376992475
+        },
+        {
+          "kind": "reset",
+          "index": 28,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.316745418997016
+        },
+        {
+          "kind": "reset",
+          "index": 29,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.7057774610002525
+        },
+        {
+          "kind": "reset",
+          "index": 30,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.373919378005667
+        },
+        {
+          "kind": "reset",
+          "index": 31,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.633175335999113
+        },
+        {
+          "kind": "reset",
+          "index": 32,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.622372168989386
+        },
+        {
+          "kind": "reset",
+          "index": 33,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.4912119610235095
+        },
+        {
+          "kind": "reset",
+          "index": 34,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.88757133600302
+        },
+        {
+          "kind": "reset",
+          "index": 35,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.537252709997119
+        },
+        {
+          "kind": "reset",
+          "index": 36,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.459307293989696
+        },
+        {
+          "kind": "reset",
+          "index": 37,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.501562876976095
+        },
+        {
+          "kind": "reset",
+          "index": 38,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.588999419996981
+        },
+        {
+          "kind": "reset",
+          "index": 39,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.665147794003133
+        },
+        {
+          "kind": "reset",
+          "index": 40,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.674055503011914
+        },
+        {
+          "kind": "reset",
+          "index": 41,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.545964543998707
+        },
+        {
+          "kind": "reset",
+          "index": 42,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.800971877004486
+        },
+        {
+          "kind": "reset",
+          "index": 43,
+          "status": 204,
+          "passed": true,
+          "seconds": 4.972641169006238
+        },
+        {
+          "kind": "reset",
+          "index": 44,
+          "status": 204,
+          "passed": true,
+          "seconds": 5.8453397109988146
+        },
+        {
+          "kind": "health",
+          "index": 0,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.0024672089784871787
+        },
+        {
+          "kind": "health",
+          "index": 1,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.001811624999390915
+        },
+        {
+          "kind": "health",
+          "index": 2,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.002160041010938585
+        },
+        {
+          "kind": "health",
+          "index": 3,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.0037898329901508987
+        },
+        {
+          "kind": "health",
+          "index": 4,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.004560542001854628
+        }
+      ],
+      "elapsed_seconds": 5.978378920000978
+    },
+    "expanded-load-summary.json": {
+      "passed": true,
+      "reports": [
+        {
+          "origin": "http://clean-s1-v-20261005t214606-a:8080",
+          "name": "50 unchanged imports",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016756833996623755
+            },
+            {
+              "index": 1,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.014902208000421524
+            },
+            {
+              "index": 2,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011232249991735443
+            },
+            {
+              "index": 3,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00983424999867566
+            },
+            {
+              "index": 4,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008831791987176985
+            },
+            {
+              "index": 5,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017859375016996637
+            },
+            {
+              "index": 6,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.013146832992788404
+            },
+            {
+              "index": 7,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016897917026653886
+            },
+            {
+              "index": 8,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012356833001831546
+            },
+            {
+              "index": 9,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008205166988773271
+            },
+            {
+              "index": 10,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01171875
+            },
+            {
+              "index": 11,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.013427582976873964
+            },
+            {
+              "index": 12,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.006202791992109269
+            },
+            {
+              "index": 13,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016110583004774526
+            },
+            {
+              "index": 14,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.007665124983759597
+            },
+            {
+              "index": 15,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.006702874990878627
+            },
+            {
+              "index": 16,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01057908299844712
+            },
+            {
+              "index": 17,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010228958009975031
+            },
+            {
+              "index": 18,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017722958989907056
+            },
+            {
+              "index": 19,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01519100001314655
+            },
+            {
+              "index": 20,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010723084007622674
+            },
+            {
+              "index": 21,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.0110335000208579
+            },
+            {
+              "index": 22,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011078333016484976
+            },
+            {
+              "index": 23,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016323708987329155
+            },
+            {
+              "index": 24,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008692667004652321
+            },
+            {
+              "index": 25,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017671417008386925
+            },
+            {
+              "index": 26,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01273445799597539
+            },
+            {
+              "index": 27,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011491041979752481
+            },
+            {
+              "index": 28,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01135258300928399
+            },
+            {
+              "index": 29,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008766292012296617
+            },
+            {
+              "index": 30,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.014535750000504777
+            },
+            {
+              "index": 31,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012686917005339637
+            },
+            {
+              "index": 32,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010462417005328462
+            },
+            {
+              "index": 33,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009249166992958635
+            },
+            {
+              "index": 34,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012260374991456047
+            },
+            {
+              "index": 35,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.005484624998643994
+            },
+            {
+              "index": 36,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.0067602920171339065
+            },
+            {
+              "index": 37,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00783566600875929
+            },
+            {
+              "index": 38,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009807292022742331
+            },
+            {
+              "index": 39,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010420957987662405
+            },
+            {
+              "index": 40,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016454334021545947
+            },
+            {
+              "index": 41,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017462957999669015
+            },
+            {
+              "index": 42,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.018970792007166892
+            },
+            {
+              "index": 43,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010392249998403713
+            },
+            {
+              "index": 44,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011774832993978634
+            },
+            {
+              "index": 45,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01562887500040233
+            },
+            {
+              "index": 46,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01072245801333338
+            },
+            {
+              "index": 47,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012843124975915998
+            },
+            {
+              "index": 48,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008191083004930988
+            },
+            {
+              "index": 49,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.013376582995988429
+            }
+          ],
+          "max_request_seconds": 0.018970792007166892,
+          "elapsed_seconds": 0.032297124998876825
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-a:8080",
+          "name": "50 valid logins",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8430169589992147
+            },
+            {
+              "index": 1,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7951634589990135
+            },
+            {
+              "index": 2,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.054596624977421016
+            },
+            {
+              "index": 3,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0110460840223823
+            },
+            {
+              "index": 4,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.18515220799599774
+            },
+            {
+              "index": 5,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8002742090029642
+            },
+            {
+              "index": 6,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3199409169901628
+            },
+            {
+              "index": 7,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0520497510151472
+            },
+            {
+              "index": 8,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7139972920122091
+            },
+            {
+              "index": 9,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5841415009927005
+            },
+            {
+              "index": 10,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7187386260193307
+            },
+            {
+              "index": 11,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2751848330080975
+            },
+            {
+              "index": 12,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6291702509915922
+            },
+            {
+              "index": 13,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4073154169891495
+            },
+            {
+              "index": 14,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.04584562499076128
+            },
+            {
+              "index": 15,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6702595009992365
+            },
+            {
+              "index": 16,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0869210009987
+            },
+            {
+              "index": 17,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.44915795800625347
+            },
+            {
+              "index": 18,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0516064180119429
+            },
+            {
+              "index": 19,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7574895000143442
+            },
+            {
+              "index": 20,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3610534999752417
+            },
+            {
+              "index": 21,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.361108167009661
+            },
+            {
+              "index": 22,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8832275840104558
+            },
+            {
+              "index": 23,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.1742285410000477
+            },
+            {
+              "index": 24,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0136557499936316
+            },
+            {
+              "index": 25,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4949312089884188
+            },
+            {
+              "index": 26,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5391697500017472
+            },
+            {
+              "index": 27,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.08632012497400865
+            },
+            {
+              "index": 28,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.13677508401451632
+            },
+            {
+              "index": 29,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3163957090000622
+            },
+            {
+              "index": 30,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9240821260027587
+            },
+            {
+              "index": 31,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.26773058300022967
+            },
+            {
+              "index": 32,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.44979533401783556
+            },
+            {
+              "index": 33,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5801675000111572
+            },
+            {
+              "index": 34,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8412275000009686
+            },
+            {
+              "index": 35,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.13017987500643358
+            },
+            {
+              "index": 36,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0924422509851865
+            },
+            {
+              "index": 37,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6272112090082373
+            },
+            {
+              "index": 38,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7548930420016404
+            },
+            {
+              "index": 39,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9670083750097547
+            },
+            {
+              "index": 40,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9699517919798382
+            },
+            {
+              "index": 41,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5374091260018758
+            },
+            {
+              "index": 42,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8831654999812599
+            },
+            {
+              "index": 43,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.49328241701005027
+            },
+            {
+              "index": 44,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4040404590195976
+            },
+            {
+              "index": 45,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6700402920250781
+            },
+            {
+              "index": 46,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.22226358400075696
+            },
+            {
+              "index": 47,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9270114170212764
+            },
+            {
+              "index": 48,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.0928153750137426
+            },
+            {
+              "index": 49,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.22977387500577606
+            }
+          ],
+          "max_request_seconds": 1.0924422509851865,
+          "elapsed_seconds": 1.105090791999828
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-a:8080",
+          "name": "40 reset +10 health/read",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.664837043994339
+            },
+            {
+              "index": 1,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.5406623359886
+            },
+            {
+              "index": 2,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.6466341280029155
+            },
+            {
+              "index": 3,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.43780858500395
+            },
+            {
+              "index": 4,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.45600104398909
+            },
+            {
+              "index": 5,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.705744419014081
+            },
+            {
+              "index": 6,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.109163085988257
+            },
+            {
+              "index": 7,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.829358043993125
+            },
+            {
+              "index": 8,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.954482461005682
+            },
+            {
+              "index": 9,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.917344460991444
+            },
+            {
+              "index": 10,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.979821752000134
+            },
+            {
+              "index": 11,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.562595585011877
+            },
+            {
+              "index": 12,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.730454294010997
+            },
+            {
+              "index": 13,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.494759168010205
+            },
+            {
+              "index": 14,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.893819335993612
+            },
+            {
+              "index": 15,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.750056668999605
+            },
+            {
+              "index": 16,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.133736668998608
+            },
+            {
+              "index": 17,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.370620794012211
+            },
+            {
+              "index": 18,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.770277918985812
+            },
+            {
+              "index": 19,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.0634895030234475
+            },
+            {
+              "index": 20,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.874350169004174
+            },
+            {
+              "index": 21,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.85177408598247
+            },
+            {
+              "index": 22,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.087990793981589
+            },
+            {
+              "index": 23,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.47893883602228
+            },
+            {
+              "index": 24,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.78909608599497
+            },
+            {
+              "index": 25,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.413795959990239
+            },
+            {
+              "index": 26,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.999535293987719
+            },
+            {
+              "index": 27,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.580544461001409
+            },
+            {
+              "index": 28,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.022321586002363
+            },
+            {
+              "index": 29,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.043194418976782
+            },
+            {
+              "index": 30,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.395477126992773
+            },
+            {
+              "index": 31,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.940515043999767
+            },
+            {
+              "index": 32,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.163305377005599
+            },
+            {
+              "index": 33,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.6859810029855
+            },
+            {
+              "index": 34,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.620646876981482
+            },
+            {
+              "index": 35,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.602543335000519
+            },
+            {
+              "index": 36,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.352848626993364
+            },
+            {
+              "index": 37,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.5180061270075385
+            },
+            {
+              "index": 38,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.184352001990192
+            },
+            {
+              "index": 39,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.813383336004335
+            },
+            {
+              "index": 40,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.01486295901122503
+            },
+            {
+              "index": 41,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.005664875003276393
+            },
+            {
+              "index": 42,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.011155790998600423
+            },
+            {
+              "index": 43,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.0154647909803316
+            },
+            {
+              "index": 44,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.005339958006516099
+            },
+            {
+              "index": 45,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.008930333977332339
+            },
+            {
+              "index": 46,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.015668834006646648
+            },
+            {
+              "index": 47,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.014755374984815717
+            },
+            {
+              "index": 48,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.017400457989424467
+            },
+            {
+              "index": 49,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.011784125003032386
+            }
+          ],
+          "max_request_seconds": 5.184352001990192,
+          "elapsed_seconds": 5.2013344609877095
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-a:8080",
+          "name": "25 reset +25 login/signup",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3346534190059174
+            },
+            {
+              "index": 1,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3030381680000573
+            },
+            {
+              "index": 2,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.748660501994891
+            },
+            {
+              "index": 3,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5109460850071628
+            },
+            {
+              "index": 4,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.2923438349971548
+            },
+            {
+              "index": 5,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.428920544014545
+            },
+            {
+              "index": 6,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6817687099974137
+            },
+            {
+              "index": 7,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.4186052930017468
+            },
+            {
+              "index": 8,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.504199710005196
+            },
+            {
+              "index": 9,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6685174599988386
+            },
+            {
+              "index": 10,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5917824180214666
+            },
+            {
+              "index": 11,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3448132930207066
+            },
+            {
+              "index": 12,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.470277417975012
+            },
+            {
+              "index": 13,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.710541419015499
+            },
+            {
+              "index": 14,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.63287000101991
+            },
+            {
+              "index": 15,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.2494590440182947
+            },
+            {
+              "index": 16,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3836156690085772
+            },
+            {
+              "index": 17,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.259790834999876
+            },
+            {
+              "index": 18,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.545972960011568
+            },
+            {
+              "index": 19,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.4593620430096053
+            },
+            {
+              "index": 20,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3741806680045556
+            },
+            {
+              "index": 21,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5948135430226102
+            },
+            {
+              "index": 22,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5552948769764043
+            },
+            {
+              "index": 23,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6406137099838816
+            },
+            {
+              "index": 24,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.7256347099901177
+            },
+            {
+              "index": 25,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8707596670137718
+            },
+            {
+              "index": 26,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9549199589819182
+            },
+            {
+              "index": 27,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0420813760138117
+            },
+            {
+              "index": 28,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8698153749865014
+            },
+            {
+              "index": 29,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2675226660212502
+            },
+            {
+              "index": 30,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3598602919955738
+            },
+            {
+              "index": 31,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.40350404201308265
+            },
+            {
+              "index": 32,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.049017791025107726
+            },
+            {
+              "index": 33,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6169773330038879
+            },
+            {
+              "index": 34,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9536268329829909
+            },
+            {
+              "index": 35,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9157392919878475
+            },
+            {
+              "index": 36,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7857098329986911
+            },
+            {
+              "index": 37,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4456187920004595
+            },
+            {
+              "index": 38,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.5300894590036478
+            },
+            {
+              "index": 39,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.6529551669955254
+            },
+            {
+              "index": 40,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.5736510420101695
+            },
+            {
+              "index": 41,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.13667912501841784
+            },
+            {
+              "index": 42,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.18570808399817906
+            },
+            {
+              "index": 43,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.7780554170021787
+            },
+            {
+              "index": 44,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.9088539590011351
+            },
+            {
+              "index": 45,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 1.0481264170084614
+            },
+            {
+              "index": 46,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.3989345010195393
+            },
+            {
+              "index": 47,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.1369412909843959
+            },
+            {
+              "index": 48,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.5264829169900622
+            },
+            {
+              "index": 49,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.5710719170165248
+            }
+          ],
+          "max_request_seconds": 3.748660501994891,
+          "elapsed_seconds": 3.7658370429999195
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-b:18080",
+          "name": "50 unchanged imports",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009327916020993143
+            },
+            {
+              "index": 1,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012227667000843212
+            },
+            {
+              "index": 2,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.018745167006272823
+            },
+            {
+              "index": 3,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009942791977664456
+            },
+            {
+              "index": 4,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.013907542015658692
+            },
+            {
+              "index": 5,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010669584007700905
+            },
+            {
+              "index": 6,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01474420801969245
+            },
+            {
+              "index": 7,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00982691699755378
+            },
+            {
+              "index": 8,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01272420902387239
+            },
+            {
+              "index": 9,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00939266599016264
+            },
+            {
+              "index": 10,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012071625009411946
+            },
+            {
+              "index": 11,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010902667010668665
+            },
+            {
+              "index": 12,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011613749986281618
+            },
+            {
+              "index": 13,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.015609499998390675
+            },
+            {
+              "index": 14,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008875042025465518
+            },
+            {
+              "index": 15,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008476750022964552
+            },
+            {
+              "index": 16,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.015448624995769933
+            },
+            {
+              "index": 17,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.014040541980648413
+            },
+            {
+              "index": 18,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01311729199369438
+            },
+            {
+              "index": 19,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009756957995705307
+            },
+            {
+              "index": 20,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.014366375020472333
+            },
+            {
+              "index": 21,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016887292003957555
+            },
+            {
+              "index": 22,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01484479202190414
+            },
+            {
+              "index": 23,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011847625020891428
+            },
+            {
+              "index": 24,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00904933299170807
+            },
+            {
+              "index": 25,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.004298249987186864
+            },
+            {
+              "index": 26,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016515666007762775
+            },
+            {
+              "index": 27,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009385708981426433
+            },
+            {
+              "index": 28,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01496066598338075
+            },
+            {
+              "index": 29,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017679708020295948
+            },
+            {
+              "index": 30,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.015067000000271946
+            },
+            {
+              "index": 31,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.008366708003450185
+            },
+            {
+              "index": 32,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01768145800451748
+            },
+            {
+              "index": 33,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010100417013745755
+            },
+            {
+              "index": 34,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.016160583996679634
+            },
+            {
+              "index": 35,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012671915988903493
+            },
+            {
+              "index": 36,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.015899457997875288
+            },
+            {
+              "index": 37,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01308475001133047
+            },
+            {
+              "index": 38,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.007440832996508107
+            },
+            {
+              "index": 39,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.007082124997396022
+            },
+            {
+              "index": 40,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.012254125002073124
+            },
+            {
+              "index": 41,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.00935962499352172
+            },
+            {
+              "index": 42,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.018665166979189962
+            },
+            {
+              "index": 43,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.009368375001940876
+            },
+            {
+              "index": 44,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01305145799415186
+            },
+            {
+              "index": 45,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.017449999984819442
+            },
+            {
+              "index": 46,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.020706749986857176
+            },
+            {
+              "index": 47,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.01665200002025813
+            },
+            {
+              "index": 48,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.010360665997723117
+            },
+            {
+              "index": 49,
+              "kind": "import",
+              "status": 204,
+              "passed": true,
+              "seconds": 0.011462750000646338
+            }
+          ],
+          "max_request_seconds": 0.020706749986857176,
+          "elapsed_seconds": 0.03058424999471754
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-b:18080",
+          "name": "50 valid logins",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4402277919871267
+            },
+            {
+              "index": 1,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6086234590038657
+            },
+            {
+              "index": 2,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5319652920006774
+            },
+            {
+              "index": 3,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3090106250019744
+            },
+            {
+              "index": 4,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.09038433397654444
+            },
+            {
+              "index": 5,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.666105709009571
+            },
+            {
+              "index": 6,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7848077499947976
+            },
+            {
+              "index": 7,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5664557089912705
+            },
+            {
+              "index": 8,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8225880840036552
+            },
+            {
+              "index": 9,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.39561091701034456
+            },
+            {
+              "index": 10,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4005331259977538
+            },
+            {
+              "index": 11,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8323068339959718
+            },
+            {
+              "index": 12,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2262597919907421
+            },
+            {
+              "index": 13,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.17871620901860297
+            },
+            {
+              "index": 14,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0337835419923067
+            },
+            {
+              "index": 15,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.081846792018041
+            },
+            {
+              "index": 16,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.351084625988733
+            },
+            {
+              "index": 17,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.8714394170092419
+            },
+            {
+              "index": 18,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3110613760072738
+            },
+            {
+              "index": 19,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.4770802090060897
+            },
+            {
+              "index": 20,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9922387510014232
+            },
+            {
+              "index": 21,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9505188339971937
+            },
+            {
+              "index": 22,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.13758645800407976
+            },
+            {
+              "index": 23,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.48483187501551583
+            },
+            {
+              "index": 24,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.997854751010891
+            },
+            {
+              "index": 25,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.03779233401292
+            },
+            {
+              "index": 26,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.870761666999897
+            },
+            {
+              "index": 27,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2661364999949001
+            },
+            {
+              "index": 28,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6558574580121785
+            },
+            {
+              "index": 29,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.1761239169863984
+            },
+            {
+              "index": 30,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2211727499961853
+            },
+            {
+              "index": 31,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9111264170205686
+            },
+            {
+              "index": 32,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7886105840152595
+            },
+            {
+              "index": 33,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.092661542003043
+            },
+            {
+              "index": 34,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9511965429992415
+            },
+            {
+              "index": 35,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7010502089979127
+            },
+            {
+              "index": 36,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.703163208992919
+            },
+            {
+              "index": 37,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.35502737600472756
+            },
+            {
+              "index": 38,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6166283760103397
+            },
+            {
+              "index": 39,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.04734754198580049
+            },
+            {
+              "index": 40,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.04627029100083746
+            },
+            {
+              "index": 41,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7467107510019559
+            },
+            {
+              "index": 42,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.2684930010000244
+            },
+            {
+              "index": 43,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5729765009891707
+            },
+            {
+              "index": 44,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5256550420017447
+            },
+            {
+              "index": 45,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.43848412501392886
+            },
+            {
+              "index": 46,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7388743759947829
+            },
+            {
+              "index": 47,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9108477089903317
+            },
+            {
+              "index": 48,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0729372090136167
+            },
+            {
+              "index": 49,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.13473750001867302
+            }
+          ],
+          "max_request_seconds": 1.081846792018041,
+          "elapsed_seconds": 1.0922228340059519
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-b:18080",
+          "name": "40 reset +10 health/read",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.982165502005955
+            },
+            {
+              "index": 1,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.8119193769816775
+            },
+            {
+              "index": 2,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.37668754401966
+            },
+            {
+              "index": 3,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.851055959996302
+            },
+            {
+              "index": 4,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.505455086007714
+            },
+            {
+              "index": 5,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.067268376995344
+            },
+            {
+              "index": 6,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.808501168998191
+            },
+            {
+              "index": 7,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.4172845849825535
+            },
+            {
+              "index": 8,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.587715753004886
+            },
+            {
+              "index": 9,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.462222169007873
+            },
+            {
+              "index": 10,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.631511503015645
+            },
+            {
+              "index": 11,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.5462277110200375
+            },
+            {
+              "index": 12,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.027202753000893
+            },
+            {
+              "index": 13,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.976116669015028
+            },
+            {
+              "index": 14,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.896877085004235
+            },
+            {
+              "index": 15,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.016461669001728
+            },
+            {
+              "index": 16,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.672372210014146
+            },
+            {
+              "index": 17,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.758467294013826
+            },
+            {
+              "index": 18,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.546713126997929
+            },
+            {
+              "index": 19,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.676632003014674
+            },
+            {
+              "index": 20,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.333765710995067
+            },
+            {
+              "index": 21,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.417225751996739
+            },
+            {
+              "index": 22,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.141752627998358
+            },
+            {
+              "index": 23,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.845462211000267
+            },
+            {
+              "index": 24,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.630539294012124
+            },
+            {
+              "index": 25,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.457748294022167
+            },
+            {
+              "index": 26,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.504676668992033
+            },
+            {
+              "index": 27,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.933470335992752
+            },
+            {
+              "index": 28,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.890507626987528
+            },
+            {
+              "index": 29,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.06464154398418
+            },
+            {
+              "index": 30,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.932940460013924
+            },
+            {
+              "index": 31,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.710508711024886
+            },
+            {
+              "index": 32,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.106054086005315
+            },
+            {
+              "index": 33,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.374008169019362
+            },
+            {
+              "index": 34,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.71705000300426
+            },
+            {
+              "index": 35,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.147660335991532
+            },
+            {
+              "index": 36,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.587671835994115
+            },
+            {
+              "index": 37,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 5.105927210999653
+            },
+            {
+              "index": 38,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.764384501992026
+            },
+            {
+              "index": 39,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 4.33439341900521
+            },
+            {
+              "index": 40,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.0065304170129820704
+            },
+            {
+              "index": 41,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.015309624985093251
+            },
+            {
+              "index": 42,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.006073833006666973
+            },
+            {
+              "index": 43,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.005466125003295019
+            },
+            {
+              "index": 44,
+              "kind": "health",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.020727834024000913
+            },
+            {
+              "index": 45,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.009310374996857718
+            },
+            {
+              "index": 46,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.017096541996579617
+            },
+            {
+              "index": 47,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.017615375021705404
+            },
+            {
+              "index": 48,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.006508291990030557
+            },
+            {
+              "index": 49,
+              "kind": "read",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.011245250003412366
+            }
+          ],
+          "max_request_seconds": 5.147660335991532,
+          "elapsed_seconds": 5.163591628021095
+        },
+        {
+          "origin": "http://clean-s1-v-20261005t214606-b:18080",
+          "name": "25 reset +25 login/signup",
+          "concurrent_calls": 50,
+          "passed": true,
+          "results": [
+            {
+              "index": 0,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6394310019968543
+            },
+            {
+              "index": 1,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3427029180165846
+            },
+            {
+              "index": 2,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.407471042999532
+            },
+            {
+              "index": 3,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.7074062099854928
+            },
+            {
+              "index": 4,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5389169600093737
+            },
+            {
+              "index": 5,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.4513748759927694
+            },
+            {
+              "index": 6,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.4663998350151815
+            },
+            {
+              "index": 7,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.322715418005828
+            },
+            {
+              "index": 8,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5540406680083834
+            },
+            {
+              "index": 9,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.596868792985333
+            },
+            {
+              "index": 10,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6229030849935953
+            },
+            {
+              "index": 11,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6648755019996315
+            },
+            {
+              "index": 12,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.6823264179984108
+            },
+            {
+              "index": 13,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.724344001006102
+            },
+            {
+              "index": 14,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.2800721259845886
+            },
+            {
+              "index": 15,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.577496626006905
+            },
+            {
+              "index": 16,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.5105329179787077
+            },
+            {
+              "index": 17,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.238244377018418
+            },
+            {
+              "index": 18,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3835556260019075
+            },
+            {
+              "index": 19,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.2994291270151734
+            },
+            {
+              "index": 20,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.3628002099867444
+            },
+            {
+              "index": 21,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.489520293980604
+            },
+            {
+              "index": 22,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.2558525429922156
+            },
+            {
+              "index": 23,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.4249279600044247
+            },
+            {
+              "index": 24,
+              "kind": "reset",
+              "status": 204,
+              "passed": true,
+              "seconds": 3.7477166680037044
+            },
+            {
+              "index": 25,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.5312153759878129
+            },
+            {
+              "index": 26,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3990663340082392
+            },
+            {
+              "index": 27,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.35381850102567114
+            },
+            {
+              "index": 28,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9612060420040507
+            },
+            {
+              "index": 29,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7850969170103781
+            },
+            {
+              "index": 30,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.9228240420052316
+            },
+            {
+              "index": 31,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.48755433401674964
+            },
+            {
+              "index": 32,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 1.0893949180026539
+            },
+            {
+              "index": 33,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.17845962499268353
+            },
+            {
+              "index": 34,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.04946295899571851
+            },
+            {
+              "index": 35,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.7101392920012586
+            },
+            {
+              "index": 36,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.6637366669892799
+            },
+            {
+              "index": 37,
+              "kind": "login",
+              "status": 200,
+              "passed": true,
+              "seconds": 0.3118922499998007
+            },
+            {
+              "index": 38,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.09078733398928307
+            },
+            {
+              "index": 39,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.2649186250055209
+            },
+            {
+              "index": 40,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.6204575000156183
+            },
+            {
+              "index": 41,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.26464733300963417
+            },
+            {
+              "index": 42,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.8241833749925718
+            },
+            {
+              "index": 43,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.8787170010036789
+            },
+            {
+              "index": 44,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.7007980839989614
+            },
+            {
+              "index": 45,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.5744093749963213
+            },
+            {
+              "index": 46,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.2205132500093896
+            },
+            {
+              "index": 47,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.9984538339776918
+            },
+            {
+              "index": 48,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.1326168749947101
+            },
+            {
+              "index": 49,
+              "kind": "signup",
+              "status": 201,
+              "passed": true,
+              "seconds": 0.13909195800079033
+            }
+          ],
+          "max_request_seconds": 3.7477166680037044,
+          "elapsed_seconds": 3.758089626993751
+        }
+      ]
+    },
+    "auth-churn-summary.json": {
+      "passed": true,
+      "reports": [
+        {
+          "name": "queued changed-password replacement",
+          "passed": true,
+          "detail": {
+            "total_overlapping_calls": 49,
+            "target_old_password_401": 4,
+            "target_new_password_200": 4,
+            "import_seconds": 0.004202957992674783,
+            "imported_session_preserved": true
+          },
+          "seconds": 1.9847887509968132
+        },
+        {
+          "name": "25 imports +25 logins with reused IDs/hash ABA",
+          "passed": true,
+          "detail": {
+            "simultaneous_calls": 50,
+            "reused_same_user_ids": true,
+            "alternating_hash_snapshots": true,
+            "final_current_credentials_verified": true,
+            "restored_tokens_preserved": true
+          },
+          "seconds": 1.2486612090142444
+        }
+      ]
+    },
+    "internal-probe-summary.json": {
+      "passed": true,
+      "checks": [
+        "active slot exception releases and next admission works",
+        "waiting ticket interruption removes ticket and next admission works",
+        "ABA same ID/hash requires one recapture and fresh success",
+        "stale wrong-password result requires recapture then current success"
+      ],
+      "recapture_cycles_observed": 2,
+      "scope": "private test instances inside exact immutable product image; no source/live-server/assertion edits"
+    },
+    "source-removal-portability-summary.json": {
+      "passed": true,
+      "source_removed_before_import": true,
+      "third_independent_process": true,
+      "preserved_original_write_paths": 5,
+      "preserved_accounts": 7,
+      "failed_key_reusable": true,
+      "operator_rights_preserved": true,
+      "destination_credentials_removed": true,
+      "repeated_import_restored_unchanged_snapshot": true,
+      "http_calls": 45,
+      "max_request_seconds": 0.2578044589899946,
+      "elapsed_seconds": 0.6349609169992618
+    }
+  },
+  "residual": {
+    "results": [
+      {
+        "name": "I-02 combined replacements and money writes",
+        "passed": true,
+        "detail": {
+          "simultaneous_calls": 50,
+          "restored_atomic_snapshots": 11,
+          "statuses": {
+            "200": 10,
+            "201": 24,
+            "204": 10,
+            "409": 6
+          }
+        },
+        "seconds": 4.1120323359791655
+      },
+      {
+        "name": "I-11 source-justified invalid-state recovery",
+        "passed": true,
+        "detail": {
+          "invalid_state_cases": [
+            "missing_required_seed_total",
+            "negative_wallet",
+            "overflow_wallet",
+            "inconsistent_seed_total",
+            "invalid_password_hash",
+            "dangling_token_user",
+            "unknown_operator",
+            "missing_retry_response",
+            "invalid_retry_body_identity",
+            "out_of_range_payment",
+            "dangling_payment_party",
+            "invalid_request_status"
+          ],
+          "all_five_original_replays_preserved": true,
+          "valid_import_recovery_each": true
+        },
+        "seconds": 1.4407655429968145
+      },
+      {
+        "name": "I-07 reset wrong JSON field types",
+        "passed": true,
+        "detail": {
+          "observed_defects": [],
+          "case_count": 6,
+          "all_rejected_400_unchanged": true
+        },
+        "seconds": 0.8677166260022204
+      }
+    ],
+    "http_calls": 1137,
+    "max_request_seconds": 0.6403966670040973
+  },
+  "failures": {
+    "staggered-generation-summary.json": {
+      "passed": false,
+      "total_http_calls": 50,
+      "max_inflight": 26,
+      "replacements": 25,
+      "logins": 25,
+      "import_spacing_seconds": 0.19,
+      "first_import_delay_seconds": 0.06,
+      "unchanged_export_imported": true,
+      "results": [
+        {
+          "kind": "login",
+          "index": 0,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.014894252002705
+        },
+        {
+          "kind": "login",
+          "index": 1,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.012076461018296
+        },
+        {
+          "kind": "login",
+          "index": 2,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.010726334992796
+        },
+        {
+          "kind": "login",
+          "index": 3,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009843043982983
+        },
+        {
+          "kind": "login",
+          "index": 4,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0098081690084655
+        },
+        {
+          "kind": "login",
+          "index": 5,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.051695625006686896
+        },
+        {
+          "kind": "login",
+          "index": 6,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.010834127024282
+        },
+        {
+          "kind": "login",
+          "index": 7,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0087871690047905
+        },
+        {
+          "kind": "login",
+          "index": 8,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.012517586001195
+        },
+        {
+          "kind": "login",
+          "index": 9,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009813126991503
+        },
+        {
+          "kind": "login",
+          "index": 10,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.04896016701241024
+        },
+        {
+          "kind": "login",
+          "index": 11,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0131524189782795
+        },
+        {
+          "kind": "login",
+          "index": 12,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.013967751991004
+        },
+        {
+          "kind": "login",
+          "index": 13,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.010359168983996
+        },
+        {
+          "kind": "login",
+          "index": 14,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.011310169007629
+        },
+        {
+          "kind": "login",
+          "index": 15,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006467459985288
+        },
+        {
+          "kind": "login",
+          "index": 16,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.010291210986907
+        },
+        {
+          "kind": "login",
+          "index": 17,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007839961006539
+        },
+        {
+          "kind": "login",
+          "index": 18,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0089441270101815
+        },
+        {
+          "kind": "login",
+          "index": 19,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009410544007551
+        },
+        {
+          "kind": "login",
+          "index": 20,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.011024251987692
+        },
+        {
+          "kind": "login",
+          "index": 21,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.008943961001933
+        },
+        {
+          "kind": "login",
+          "index": 22,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.012798252981156
+        },
+        {
+          "kind": "login",
+          "index": 23,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009973586013075
+        },
+        {
+          "kind": "login",
+          "index": 24,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.01196000300115
+        },
+        {
+          "kind": "import",
+          "index": 0,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001290707994485274
+        },
+        {
+          "kind": "import",
+          "index": 1,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011660000018309802
+        },
+        {
+          "kind": "import",
+          "index": 2,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0010791250097099692
+        },
+        {
+          "kind": "import",
+          "index": 3,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001293959008762613
+        },
+        {
+          "kind": "import",
+          "index": 4,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001141584012657404
+        },
+        {
+          "kind": "import",
+          "index": 5,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013456669985316694
+        },
+        {
+          "kind": "import",
+          "index": 6,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.00121070901514031
+        },
+        {
+          "kind": "import",
+          "index": 7,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.00141125000664033
+        },
+        {
+          "kind": "import",
+          "index": 8,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011779160122387111
+        },
+        {
+          "kind": "import",
+          "index": 9,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011374579917173833
+        },
+        {
+          "kind": "import",
+          "index": 10,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0016816249990370125
+        },
+        {
+          "kind": "import",
+          "index": 11,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013855830184184015
+        },
+        {
+          "kind": "import",
+          "index": 12,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012825829908251762
+        },
+        {
+          "kind": "import",
+          "index": 13,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011693749984260648
+        },
+        {
+          "kind": "import",
+          "index": 14,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011031670146621764
+        },
+        {
+          "kind": "import",
+          "index": 15,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011159999994561076
+        },
+        {
+          "kind": "import",
+          "index": 16,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012307919969316572
+        },
+        {
+          "kind": "import",
+          "index": 17,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011651669919956475
+        },
+        {
+          "kind": "import",
+          "index": 18,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001292250002734363
+        },
+        {
+          "kind": "import",
+          "index": 19,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012227910046931356
+        },
+        {
+          "kind": "import",
+          "index": 20,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0011400000075809658
+        },
+        {
+          "kind": "import",
+          "index": 21,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0015111250104382634
+        },
+        {
+          "kind": "import",
+          "index": 22,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0017097500094678253
+        },
+        {
+          "kind": "import",
+          "index": 23,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012134169810451567
+        },
+        {
+          "kind": "import",
+          "index": 24,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0026457089988980442
+        }
+      ],
+      "elapsed_seconds": 5.022672502993373
+    },
+    "staggered-generation-repeat-summary.json": {
+      "passed": false,
+      "total_http_calls": 50,
+      "max_inflight": 26,
+      "replacements": 25,
+      "logins": 25,
+      "import_spacing_seconds": 0.19,
+      "first_import_delay_seconds": 0.06,
+      "unchanged_export_imported": true,
+      "results": [
+        {
+          "kind": "login",
+          "index": 0,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0069236689887475
+        },
+        {
+          "kind": "login",
+          "index": 1,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009127002005698
+        },
+        {
+          "kind": "login",
+          "index": 2,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009502169006737
+        },
+        {
+          "kind": "login",
+          "index": 3,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007052877015667
+        },
+        {
+          "kind": "login",
+          "index": 4,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.04811179201351479
+        },
+        {
+          "kind": "login",
+          "index": 5,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.00814033599454
+        },
+        {
+          "kind": "login",
+          "index": 6,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007074544002535
+        },
+        {
+          "kind": "login",
+          "index": 7,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007566128013423
+        },
+        {
+          "kind": "login",
+          "index": 8,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006930126983207
+        },
+        {
+          "kind": "login",
+          "index": 9,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.008836168999551
+        },
+        {
+          "kind": "login",
+          "index": 10,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0085457940003835
+        },
+        {
+          "kind": "login",
+          "index": 11,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006020918983268
+        },
+        {
+          "kind": "login",
+          "index": 12,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007067586004268
+        },
+        {
+          "kind": "login",
+          "index": 13,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006770336010959
+        },
+        {
+          "kind": "login",
+          "index": 14,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006518127018353
+        },
+        {
+          "kind": "login",
+          "index": 15,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.009172127000056
+        },
+        {
+          "kind": "login",
+          "index": 16,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.008884044014849
+        },
+        {
+          "kind": "login",
+          "index": 17,
+          "status": 200,
+          "passed": true,
+          "seconds": 0.04867954200017266
+        },
+        {
+          "kind": "login",
+          "index": 18,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007658668997465
+        },
+        {
+          "kind": "login",
+          "index": 19,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.007904877013061
+        },
+        {
+          "kind": "login",
+          "index": 20,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.008005169016542
+        },
+        {
+          "kind": "login",
+          "index": 21,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0088692939898465
+        },
+        {
+          "kind": "login",
+          "index": 22,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.006897001992911
+        },
+        {
+          "kind": "login",
+          "index": 23,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.008382459986024
+        },
+        {
+          "kind": "login",
+          "index": 24,
+          "passed": false,
+          "error": "transport failure POST /auth/login: TimeoutError",
+          "seconds": 5.0084356690058485
+        },
+        {
+          "kind": "import",
+          "index": 0,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014115420053713024
+        },
+        {
+          "kind": "import",
+          "index": 1,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001192625000840053
+        },
+        {
+          "kind": "import",
+          "index": 2,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014660829911008477
+        },
+        {
+          "kind": "import",
+          "index": 3,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013177079963497818
+        },
+        {
+          "kind": "import",
+          "index": 4,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014277090085670352
+        },
+        {
+          "kind": "import",
+          "index": 5,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0016064999799709767
+        },
+        {
+          "kind": "import",
+          "index": 6,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014210840163286775
+        },
+        {
+          "kind": "import",
+          "index": 7,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001319290982792154
+        },
+        {
+          "kind": "import",
+          "index": 8,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012459580029826611
+        },
+        {
+          "kind": "import",
+          "index": 9,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0016616659995634109
+        },
+        {
+          "kind": "import",
+          "index": 10,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0018612910062074661
+        },
+        {
+          "kind": "import",
+          "index": 11,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001431250013411045
+        },
+        {
+          "kind": "import",
+          "index": 12,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013568339927587658
+        },
+        {
+          "kind": "import",
+          "index": 13,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001397125015500933
+        },
+        {
+          "kind": "import",
+          "index": 14,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012472080125007778
+        },
+        {
+          "kind": "import",
+          "index": 15,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0015231250145006925
+        },
+        {
+          "kind": "import",
+          "index": 16,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.001633167004911229
+        },
+        {
+          "kind": "import",
+          "index": 17,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014841250085737556
+        },
+        {
+          "kind": "import",
+          "index": 18,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013314999814610928
+        },
+        {
+          "kind": "import",
+          "index": 19,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0013838750019203871
+        },
+        {
+          "kind": "import",
+          "index": 20,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.002067541005089879
+        },
+        {
+          "kind": "import",
+          "index": 21,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0014235840062610805
+        },
+        {
+          "kind": "import",
+          "index": 22,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.002032666001468897
+        },
+        {
+          "kind": "import",
+          "index": 23,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0012661249784287065
+        },
+        {
+          "kind": "import",
+          "index": 24,
+          "status": 204,
+          "passed": true,
+          "seconds": 0.0017716250149533153
+        }
+      ],
+      "elapsed_seconds": 5.0166102109942585
+    }
+  },
+  "overshoot": {
+    "collected": 35,
+    "passed": 0,
+    "failed": 1,
+    "errors": 0,
+    "skipped": 0,
+    "deselected": 0,
+    "xfailed": 0,
+    "files": {
+      "stage_2/test_sample.py": {
+        "passed": 0,
+        "total": 10
+      },
+      "stage_2/test_ui.py": {
+        "passed": 0,
+        "total": 25
+      }
+    }
+  },
+  "requirement": "\u00a72/I-05 ordinary5s deadline under bounded repeated imports/login recapture",
+  "product_image": "sha256:cf392094e37fd1c3a079e74cdead45fa407b799216804f819afb894d652689a5",
+  "runner_image": "sha256:022bfa4b97f6bfee83dfd8628e957dbca5ab65ab6768ad62bc3820138c287902",
+  "evidence": [
+    "DEFECTS.md",
+    "INSPECTION-RESULTS.md",
+    "ledger-reconciliation.json",
+    "identity.json",
+    "services.json",
+    "third-service.json",
+    "runner-current.json"
+  ],
+  "model": "Codex/gpt-6.1-sol per runtime briefing",
+  "effort": "high",
+  "billing": null,
+  "token_usage": null,
+  "limitations": [
+    "All published participant-package Stage1 tests ran; private judging suites are unavailable.",
+    "Source-aware private test instances inside exact image simulate gate interruptions; live server and source/assertions are unchanged.",
+    "Live recapture counters are not exported; source inspected and2private recapture branches counted.",
+    "Docker internal mode suppresses host mappings; isolated origins verify binding/PORT without outbound network.",
+    "No arbitrary-throughput/peak-memory/indefinite-aging claim; required bounded deadline counterexample prevents acceptance."
+  ]
+}

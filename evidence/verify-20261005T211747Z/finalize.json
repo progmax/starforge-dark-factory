@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "checks/verify-20261005T211747Z/finalize.py"
+  ],
+  "cwd": "/Users/max/work/ai/hackops/participation/dark-factory/work/clean-stage1",
+  "started_at": "2026-10-05T21:34:33.790545+00:00",
+  "ended_at": "2026-10-05T21:34:33.831235+00:00",
+  "elapsed_seconds": 0.040319917257875204,
+  "timeout_seconds": 30.0,
+  "exit_code": 0,
+  "timed_out": false,
+  "log": "/Users/max/work/ai/hackops/participation/dark-factory/work/clean-stage1/checks/verify-20261005T211747Z/finalize.log"
+}
