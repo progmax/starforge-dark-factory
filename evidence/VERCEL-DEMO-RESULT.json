@@ -1,0 +1,60 @@
+{
+  "base_url": "https://vercel-stage1-theta.vercel.app",
+  "source_product_commit": "a8805bf4dc2297e0953ea4a5979fcd85c98b95b4",
+  "health": {
+    "status": "ok"
+  },
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "seconds": 0.466
+    },
+    {
+      "method": "POST",
+      "path": "/_test/reset",
+      "status": 204,
+      "seconds": 0.513
+    },
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "status": 200,
+      "seconds": 0.351
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "status": 200,
+      "seconds": 0.431
+    },
+    {
+      "method": "POST",
+      "path": "/payments",
+      "status": 201,
+      "seconds": 1.601
+    },
+    {
+      "method": "POST",
+      "path": "/payments",
+      "status": 200,
+      "seconds": 0.292
+    },
+    {
+      "method": "GET",
+      "path": "/me",
+      "status": 200,
+      "seconds": 0.335
+    }
+  ],
+  "balance_before": 10000,
+  "balance_after": 8500,
+  "first_payment_status": 201,
+  "retry_status": 200,
+  "identical_receipt": true,
+  "no_additional_debit": true,
+  "synthetic_demo_only": true,
+  "tokens_published": false,
+  "cloud_scale_limit": "ephemeral in-memory instances; this deployment is not new graded acceptance"
+}
